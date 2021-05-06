@@ -21,8 +21,8 @@ namespace QuanLyNhaHang
 
         private void loadBan()
         {
-            dvgDanhSachBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dvgDanhSachBan.DataSource = banDAO.Instance.getBan();
+            dgvDanhSachBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDanhSachBan.DataSource = banDAO.Instance.getBan();
         }
 
         private void Frm_Ban_Load(object sender, EventArgs e)

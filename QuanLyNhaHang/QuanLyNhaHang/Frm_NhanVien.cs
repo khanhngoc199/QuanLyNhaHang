@@ -15,6 +15,24 @@ namespace QuanLyNhaHang
         public Frm_NhanVien()
         {
             InitializeComponent();
+            loadNhanVien();
+            loadCbb();
+            LoadDataFromGrv();
+        }
+
+        private void LoadDataFromGrv()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void loadCbb()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void loadNhanVien()
+        {
+            throw new NotImplementedException();
         }
 
         private void Frm_NhanVien_Load(object sender, EventArgs e)
