@@ -12,6 +12,7 @@ namespace DAO
     {
         //lớp conection để kết nối chương trình với sql
         private static Database instrance;
+        SqlDataAdapter adapter;
 
         public static Database Instrance
         {
@@ -34,33 +35,35 @@ namespace DAO
         //chuỗi kết nối sql
         private string ConnectionSTR = @"Data Source=DESKTOP-8GCG3PG ;Initial Catalog=QLNH;Integrated Security=True";
 
-        public DataTable ExecuteQuery(string query, object[] parameter = null)
+        public DataTable ExecuteQuery(string query,params SqlParameter[] parameter)
         {
-            DataTable data = new DataTable();
+            DataTable data;
 
             using (SqlConnection connection = new SqlConnection(ConnectionSTR))//mở kết nối sql
             {
+                if(connection.State==ConnectionState.Open)
+                {
+                    connection.Close();
+                }
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
-
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandTimeout = 600;
                 if (parameter != null)
                 {
                     //kiểm tra câu lệnh truy vấn và các tham số truyền vào
-                    string[] listPara = query.Split(' ');// cắt chuỗi để lấy các tham số
-                    int i = 0;
-                    foreach (string item in listPara)
+                    
+                    foreach (SqlParameter item in parameter)
                     {
-                        if (item.Contains('@'))//kiểm tra phần tử nào trong mảng có tý tự @ trước.
-                        {
-                            command.Parameters.AddWithValue(item, parameter[i]);//add vào mảng các tham số
-                            i++;
-                        }
+
+                        command.Parameters.Add(item);
+                           
                     }
                 }
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);//tạo adapter sql
-
+                 adapter = new SqlDataAdapter(command);//tạo adapter sql
+                data = new DataTable();
                 adapter.Fill(data);//đổ dữ liệu vào biến data.
 
                 connection.Close();//đóng kết nối

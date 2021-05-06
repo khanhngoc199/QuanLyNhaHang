@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,8 @@ namespace DAO
         private userDAO() { }
         public bool login(string username, string password)
         {
-            string query = "USP_Login @tenTaiKhoan , @matKhau";
-            DataTable result = Database.Instrance.ExecuteQuery(query);
+            string query = "USP_Login";
+            DataTable result = Database.Instrance.ExecuteQuery(query,new SqlParameter("@tenTaiKhoan",username),new SqlParameter("@matKhau",password));
             return result.Rows.Count > 0;
         }
         public bool createUser(int ma, string user, string pass)

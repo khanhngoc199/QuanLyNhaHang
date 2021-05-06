@@ -239,7 +239,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            //this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lbl_qlban
             // 
@@ -265,7 +265,7 @@
             this.Controls.Add(this.lbl_qlban);
             this.Name = "Frm_Ban";
             this.Text = "Frm_Ban";
-            this.Load += new System.EventHandler(this.Frm_Ban_Load);
+            //this.Load += new System.EventHandler(this.Frm_Ban_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBan)).EndInit();
             this.grb_ban.ResumeLayout(false);
             this.grb_ban.PerformLayout();

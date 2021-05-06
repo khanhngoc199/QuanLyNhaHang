@@ -40,9 +40,8 @@ namespace QuanLyNhaHang
                 {
                     key = 1;
                 }
-                Frm_Main f = new Frm_Main();
-                this.Hide();
-                f.Show();
+
+                this.Close();
             }
             else
             {
