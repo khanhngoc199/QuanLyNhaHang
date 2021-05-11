@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapnhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvDanhsachnhanvien = new System.Windows.Forms.DataGridView();
+            this.MANV = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.MACHUCNANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbBoPhan = new System.Windows.Forms.ComboBox();
             this.cbGioitinh = new System.Windows.Forms.ComboBox();
             this.dtpNgaysinh = new System.Windows.Forms.DateTimePicker();
@@ -46,14 +54,9 @@
             this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.MANV = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.MACHUCNANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachnhanvien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -69,6 +72,7 @@
             this.btnXoa.Text = "Xóa nhân viên";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapnhat
             // 
@@ -83,6 +87,7 @@
             this.btnCapnhat.Text = "Cập nhật nhân viên";
             this.btnCapnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCapnhat.UseVisualStyleBackColor = true;
+            this.btnCapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
             // 
             // btnThem
             // 
@@ -97,6 +102,7 @@
             this.btnThem.Text = "Thêm nhân viên";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvDanhsachnhanvien
             // 
@@ -117,6 +123,51 @@
             this.dgvDanhsachnhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhsachnhanvien.Size = new System.Drawing.Size(914, 265);
             this.dgvDanhsachnhanvien.TabIndex = 66;
+            this.dgvDanhsachnhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhsachnhanvien_CellContentClick);
+            this.dgvDanhsachnhanvien.SelectionChanged += new System.EventHandler(this.dgvDanhsachnhanvien_SelectionChanged);
+            // 
+            // MANV
+            // 
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.HeaderText = "Mã Nhân Viên";
+            this.MANV.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.MANV.Name = "MANV";
+            // 
+            // MACHUCNANG
+            // 
+            this.MACHUCNANG.DataPropertyName = "MACHUCNANG";
+            this.MACHUCNANG.HeaderText = "Mã Chức Năng";
+            this.MACHUCNANG.Name = "MACHUCNANG";
+            // 
+            // TENNV
+            // 
+            this.TENNV.DataPropertyName = "TENNV";
+            this.TENNV.HeaderText = "Tên Nhân Viên";
+            this.TENNV.Name = "TENNV";
+            // 
+            // GIOITINH
+            // 
+            this.GIOITINH.DataPropertyName = "GIOITINH";
+            this.GIOITINH.HeaderText = "Giới Tính";
+            this.GIOITINH.Name = "GIOITINH";
+            // 
+            // NGAYSINH
+            // 
+            this.NGAYSINH.DataPropertyName = "NGAYSINH";
+            this.NGAYSINH.HeaderText = "Ngày Sinh";
+            this.NGAYSINH.Name = "NGAYSINH";
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            // 
+            // DIENTHOAI
+            // 
+            this.DIENTHOAI.DataPropertyName = "DIENTHOAI";
+            this.DIENTHOAI.HeaderText = "Điện Thoại";
+            this.DIENTHOAI.Name = "DIENTHOAI";
             // 
             // cbBoPhan
             // 
@@ -159,6 +210,7 @@
             this.txtDienthoai.Name = "txtDienthoai";
             this.txtDienthoai.Size = new System.Drawing.Size(189, 27);
             this.txtDienthoai.TabIndex = 61;
+            this.txtDienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienthoai_KeyPress);
             // 
             // label7
             // 
@@ -221,6 +273,7 @@
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(189, 27);
             this.txtTenNhanVien.TabIndex = 57;
+            this.txtTenNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNhanVien_KeyPress);
             // 
             // label3
             // 
@@ -241,6 +294,7 @@
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.Size = new System.Drawing.Size(189, 27);
             this.txtMaNhanVien.TabIndex = 56;
+            this.txtMaNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaNhanVien_KeyPress);
             // 
             // label2
             // 
@@ -264,48 +318,9 @@
             this.label1.TabIndex = 67;
             this.label1.Text = "Mã nhân viên";
             // 
-            // MANV
+            // errorProvider1
             // 
-            this.MANV.DataPropertyName = "MANV";
-            this.MANV.HeaderText = "Mã Nhân Viên";
-            this.MANV.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.MANV.Name = "MANV";
-            // 
-            // MACHUCNANG
-            // 
-            this.MACHUCNANG.DataPropertyName = "MACHUCNANG";
-            this.MACHUCNANG.HeaderText = "Mã Chức Năng";
-            this.MACHUCNANG.Name = "MACHUCNANG";
-            // 
-            // TENNV
-            // 
-            this.TENNV.DataPropertyName = "TENNV";
-            this.TENNV.HeaderText = "Tên Nhân Viên";
-            this.TENNV.Name = "TENNV";
-            // 
-            // GIOITINH
-            // 
-            this.GIOITINH.DataPropertyName = "GIOITINH";
-            this.GIOITINH.HeaderText = "Giới Tính";
-            this.GIOITINH.Name = "GIOITINH";
-            // 
-            // NGAYSINH
-            // 
-            this.NGAYSINH.DataPropertyName = "NGAYSINH";
-            this.NGAYSINH.HeaderText = "Ngày Sinh";
-            this.NGAYSINH.Name = "NGAYSINH";
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
-            // 
-            // DIENTHOAI
-            // 
-            this.DIENTHOAI.DataPropertyName = "DIENTHOAI";
-            this.DIENTHOAI.HeaderText = "Điện Thoại";
-            this.DIENTHOAI.Name = "DIENTHOAI";
+            this.errorProvider1.ContainerControl = this;
             // 
             // Frm_NhanVien
             // 
@@ -332,8 +347,10 @@
             this.Controls.Add(this.label1);
             this.Name = "Frm_NhanVien";
             this.Text = "Frm_NhanVien";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_NhanVien_FormClosing);
             this.Load += new System.EventHandler(this.Frm_NhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachnhanvien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYSINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

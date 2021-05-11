@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDongY = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.lbl_matkhau = new System.Windows.Forms.Label();
             this.lbl_tendn = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMaTaiKhoan
@@ -45,6 +48,8 @@
             this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
             this.txtMaTaiKhoan.Size = new System.Drawing.Size(259, 27);
             this.txtMaTaiKhoan.TabIndex = 13;
+            this.txtMaTaiKhoan.TextChanged += new System.EventHandler(this.txtMaTaiKhoan_TextChanged);
+            this.txtMaTaiKhoan.Leave += new System.EventHandler(this.txtMaTaiKhoan_Leave);
             // 
             // label1
             // 
@@ -68,7 +73,6 @@
             this.btnDongY.TabIndex = 16;
             this.btnDongY.Text = "Đồng ý";
             this.btnDongY.UseVisualStyleBackColor = true;
-
             // 
             // txtMatKhau
             // 
@@ -111,6 +115,10 @@
             this.lbl_tendn.TabIndex = 17;
             this.lbl_tendn.Text = "Tên đăng nhập:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Frm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +133,9 @@
             this.Controls.Add(this.lbl_tendn);
             this.Name = "Frm_User";
             this.Text = "Frm_User";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_User_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_User_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +150,6 @@
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.Label lbl_matkhau;
         private System.Windows.Forms.Label lbl_tendn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -52,6 +52,60 @@
     <Compile Include="Frm_Ban.Designer.cs">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_BaoCaoDoanhThuNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BaoCaoDoanhThuNgay.Designer.cs">
+      <DependentUpon>Frm_BaoCaoDoanhThuNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BaoCaoNguyenLieuTon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BaoCaoNguyenLieuTon.Designer.cs">
+      <DependentUpon>Frm_BaoCaoNguyenLieuTon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BoPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BoPhan.Designer.cs">
+      <DependentUpon>Frm_BoPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ChonMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ChonMon.Designer.cs">
+      <DependentUpon>Frm_ChonMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DoiMatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DoiMatkhau.Designer.cs">
+      <DependentUpon>Frm_DoiMatkhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_GoiMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_GoiMon.Designer.cs">
+      <DependentUpon>Frm_GoiMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HoaDonNhap.Designer.cs">
+      <DependentUpon>Frm_HoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HoaDonXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HoaDonXuat.Designer.cs">
+      <DependentUpon>Frm_HoaDonXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KhuVuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KhuVuc.Designer.cs">
+      <DependentUpon>Frm_KhuVuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +117,12 @@
     </Compile>
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MonAn.Designer.cs">
+      <DependentUpon>Frm_MonAn.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_NguyenLieu.cs">
       <SubType>Form</SubType>
@@ -111,11 +171,41 @@
     <EmbeddedResource Include="Frm_Ban.resx">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BaoCaoDoanhThuNgay.resx">
+      <DependentUpon>Frm_BaoCaoDoanhThuNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BaoCaoNguyenLieuTon.resx">
+      <DependentUpon>Frm_BaoCaoNguyenLieuTon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BoPhan.resx">
+      <DependentUpon>Frm_BoPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ChonMon.resx">
+      <DependentUpon>Frm_ChonMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DoiMatkhau.resx">
+      <DependentUpon>Frm_DoiMatkhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_GoiMon.resx">
+      <DependentUpon>Frm_GoiMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HoaDonNhap.resx">
+      <DependentUpon>Frm_HoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HoaDonXuat.resx">
+      <DependentUpon>Frm_HoaDonXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KhuVuc.resx">
+      <DependentUpon>Frm_KhuVuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MonAn.resx">
+      <DependentUpon>Frm_MonAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_NguyenLieu.resx">
       <DependentUpon>Frm_NguyenLieu.cs</DependentUpon>
