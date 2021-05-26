@@ -55,7 +55,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="goiMonDAO.cs" />
+    <Compile Include="khuVucDAO.cs" />
+    <Compile Include="menuDAO.cs" />
+    <Compile Include="monAnDAO.cs" />
     <Compile Include="nhanVienDAO.cs" />
+    <Compile Include="nhomMonAnDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="userDAO.cs" />

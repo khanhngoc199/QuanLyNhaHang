@@ -169,5 +169,17 @@ namespace QuanLyNhaHang
                 MessageBox.Show("Thông tin không hợp lệ ");
             }
         }
+
+        private void Frm_Ban_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn muốn thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (r == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void grbBan_Enter(object sender, EventArgs e)
+        {
+            this.grbBan.BackColor = Color.Transparent;
+        }
     }
 }

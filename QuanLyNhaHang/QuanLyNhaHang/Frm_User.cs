@@ -40,7 +40,7 @@ namespace QuanLyNhaHang
             }
             try
             {
-                if (userDAO.Instance.createUser(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text))//insert tài khoản vào database
+                if (userDAO.Instance.createND(int.Parse(txtMaTaiKhoan.Text), txtTenDangNhap.Text, txtMatKhau.Text))//insert tài khoản vào database
                 {
                     MessageBox.Show("Đăng ký thành công");
                 }

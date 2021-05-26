@@ -36,7 +36,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.lbl_dsBan = new System.Windows.Forms.Label();
-            this.grb_ban = new System.Windows.Forms.GroupBox();
+            this.grbBan = new System.Windows.Forms.GroupBox();
             this.txtTenBan = new System.Windows.Forms.TextBox();
             this.txtMaBan = new System.Windows.Forms.TextBox();
             this.lsbTenKhuVuc = new System.Windows.Forms.ListBox();
@@ -48,7 +48,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.lbl_qlban = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBan)).BeginInit();
-            this.grb_ban.SuspendLayout();
+            this.grbBan.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDanhSachBan
@@ -127,22 +127,23 @@
             this.lbl_dsBan.TabIndex = 27;
             this.lbl_dsBan.Text = "Danh Sách Bàn";
             // 
-            // grb_ban
+            // grbBan
             // 
-            this.grb_ban.Controls.Add(this.txtTenBan);
-            this.grb_ban.Controls.Add(this.txtMaBan);
-            this.grb_ban.Controls.Add(this.lsbTenKhuVuc);
-            this.grb_ban.Controls.Add(this.lsbTrangThai);
-            this.grb_ban.Controls.Add(this.lbl_trangthai);
-            this.grb_ban.Controls.Add(this.lbl_tenban);
-            this.grb_ban.Controls.Add(this.lbl_tenkv);
-            this.grb_ban.Controls.Add(this.lbl_maban);
-            this.grb_ban.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_ban.Location = new System.Drawing.Point(490, 49);
-            this.grb_ban.Name = "grb_ban";
-            this.grb_ban.Size = new System.Drawing.Size(333, 186);
-            this.grb_ban.TabIndex = 21;
-            this.grb_ban.TabStop = false;
+            this.grbBan.Controls.Add(this.txtTenBan);
+            this.grbBan.Controls.Add(this.txtMaBan);
+            this.grbBan.Controls.Add(this.lsbTenKhuVuc);
+            this.grbBan.Controls.Add(this.lsbTrangThai);
+            this.grbBan.Controls.Add(this.lbl_trangthai);
+            this.grbBan.Controls.Add(this.lbl_tenban);
+            this.grbBan.Controls.Add(this.lbl_tenkv);
+            this.grbBan.Controls.Add(this.lbl_maban);
+            this.grbBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbBan.Location = new System.Drawing.Point(490, 49);
+            this.grbBan.Name = "grbBan";
+            this.grbBan.Size = new System.Drawing.Size(333, 186);
+            this.grbBan.TabIndex = 21;
+            this.grbBan.TabStop = false;
+            this.grbBan.Enter += new System.EventHandler(this.grbBan_Enter);
             // 
             // txtTenBan
             // 
@@ -239,7 +240,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
-            //this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lbl_qlban
             // 
@@ -260,15 +260,15 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.lbl_dsBan);
-            this.Controls.Add(this.grb_ban);
+            this.Controls.Add(this.grbBan);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.lbl_qlban);
             this.Name = "Frm_Ban";
             this.Text = "Frm_Ban";
-            //this.Load += new System.EventHandler(this.Frm_Ban_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Ban_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBan)).EndInit();
-            this.grb_ban.ResumeLayout(false);
-            this.grb_ban.PerformLayout();
+            this.grbBan.ResumeLayout(false);
+            this.grbBan.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +284,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label lbl_dsBan;
-        private System.Windows.Forms.GroupBox grb_ban;
+        private System.Windows.Forms.GroupBox grbBan;
         private System.Windows.Forms.TextBox txtTenBan;
         private System.Windows.Forms.TextBox txtMaBan;
         private System.Windows.Forms.ListBox lsbTenKhuVuc;

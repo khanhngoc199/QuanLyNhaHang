@@ -35,11 +35,11 @@ namespace QuanLyNhaHang
 
         private void loadCbb()
         {
-            List<chucNangDTO> ls = nhanVienDAO.Instance.getlist();//lấy danh sách các bộ phận trong nhà hàng
-            foreach (chucNangDTO tb in ls)
+            List<boPhanDTO> ls = nhanVienDAO.Instance.getlist();//lấy danh sách các bộ phận trong nhà hàng
+            foreach (boPhanDTO tb in ls)
             {
-                cbBoPhan.Items.Add(tb.TenChucNang);//add danh sách các bộ phận vào combobox
-            }
+                cbBoPhan.Items.Add(tb.Ten);//add danh sách các bộ phận vào combobox
+            }    
         }
 
         private void loadNhanVien()

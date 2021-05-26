@@ -40,7 +40,7 @@ namespace DTO
                     {
                         try
                         {
-                            if (userDAO.Instance.updateUser(txtTenDangNhap.Text, txtMatKhauCu.Text, txtMatKhauMoi.Text))//truyền tham số vào hàm đăng nhập tài khoản trong lớp user_DAO
+                            if (userDAO.Instance.updateuser(txtTenDangNhap.Text, txtMatKhauCu.Text, txtMatKhauMoi.Text))//truyền tham số vào hàm đăng nhập tài khoản trong lớp user_DAO
                             {
                                 MessageBox.Show("Đổi thành công");
                                 btnDongY.Enabled = false;

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,39 +33,39 @@ namespace DAO
         {
             return Database.Instrance.ExecuteQuery("SELECT * FROM DBO.NHANVIEN");
         }
-        public bool insertNhanvien(int maNV, string tenNV, string boPhan, string dThoai, string dChi, string gioitinh, DateTime ngaysinh)
+        public bool insertNhanvien(int maNV, string tenNV, string boPhan, string dienThoai, string diaChi, string gioiTinh, DateTime ngaySinh)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC usp_insernhanvienprc2 @mnv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioitinh, ngaysinh, dChi, dThoai });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertNhanVien @manv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioiTinh, ngaySinh, diaChi, dienThoai });
             return n > 0;
         }
-        public bool updateNhanvien(int maNV, string tenNV, string boPhan, string dThoai, string dChi, string gioitinh, DateTime ngaysinh)
+        public bool updateNhanvien(int maNV, string tenNV, string boPhan, string dienThoai, string diaChi, string gioiTinh, DateTime ngaySinh)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC usp_update3 @mnv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioitinh, ngaysinh, dChi, dThoai });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_update @manv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioiTinh, ngaySinh, diaChi, dienThoai });
             return n > 0;
         }
         public bool deleteNhanvien(int maNV)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC usp_DELETENvien @mnv", new object[] { maNV });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_deleteNhanVien @manv", new object[] { maNV });
             return n > 0;
         }
         public DataTable getbp()
         {
-            return Database.Instrance.ExecuteQuery(" SELECT * FROM dbo.CHUCNANG ");
+            return Database.Instrance.ExecuteQuery(" SELECT * FROM dbo.BOPHAN ");
         }
-        public List<chucNangDTO> getlist()
+        public List<boPhanDTO> getlist()
         {
-            List<chucNangDTO> group = new List<chucNangDTO>();
-            DataTable table = Database.Instrance.ExecuteQuery(" SELECT * FROM dbo.CHUCNANG ");
+            List<boPhanDTO> group = new List<boPhanDTO>();
+            DataTable table = Database.Instrance.ExecuteQuery(" SELECT * FROM dbo.BOPHAN ");
             foreach (DataRow row in table.Rows)
             {
-                chucNangDTO nhom = new chucNangDTO(row);
+                boPhanDTO nhom = new boPhanDTO(row);
                 group.Add(nhom);
             }
             return group;
         }
         public bool insertbophan(int ma, string ten)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC usp_insertbophan @ma , @ten ", new object[] { ma, ten });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertBoPhan @ma , @ten ", new object[] { ma, ten });
             return n > 0;
         }
     }
