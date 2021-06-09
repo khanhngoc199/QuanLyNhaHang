@@ -207,6 +207,7 @@
             this.Controls.Add(this.btnThoat);
             this.Name = "Frm_PhanQuyen";
             this.Text = "Frm_PhanQuyen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_PhanQuyen_FormClosing);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

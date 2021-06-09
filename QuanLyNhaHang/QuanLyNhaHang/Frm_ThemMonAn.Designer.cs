@@ -153,6 +153,7 @@
             this.cbLoaiThucDon.Name = "cbLoaiThucDon";
             this.cbLoaiThucDon.Size = new System.Drawing.Size(201, 28);
             this.cbLoaiThucDon.TabIndex = 40;
+            this.cbLoaiThucDon.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThucDon_SelectedIndexChanged);
             // 
             // btnThemMon
             // 

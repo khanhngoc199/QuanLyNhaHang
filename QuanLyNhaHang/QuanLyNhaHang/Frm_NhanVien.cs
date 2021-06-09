@@ -22,40 +22,35 @@ namespace QuanLyNhaHang
             LoadDataFromGrv();
         }
 
-        private void LoadDataFromGrv()
-        {
-            //hiển thị thông tin vào các textbox, combobox, khi ta chọn một dòng trong gridview
-            txtMaNhanVien.DataBindings.Add(new Binding("Text", dgvDanhsachnhanvien.DataSource, "MANV"));
-            txtTenNhanVien.DataBindings.Add(new Binding("Text", dgvDanhsachnhanvien.DataSource, "TENNV"));
-            txtDienthoai.DataBindings.Add(new Binding("Text", dgvDanhsachnhanvien.DataSource, "DIENTHOAI"));
-            txtDiachi.DataBindings.Add(new Binding("Text", dgvDanhsachnhanvien.DataSource, "DIACHI"));
-            cbGioitinh.DataBindings.Add(new Binding("Text", dgvDanhsachnhanvien.DataSource, "GIOITINH"));
-            dtpNgaysinh.DataBindings.Add(new Binding("Text", dgvDanhsachnhanvien.DataSource, "NGAYSINH"));
-        }
-
         private void loadCbb()
         {
             List<boPhanDTO> ls = nhanVienDAO.Instance.getlist();//lấy danh sách các bộ phận trong nhà hàng
             foreach (boPhanDTO tb in ls)
             {
                 cbBoPhan.Items.Add(tb.Ten);//add danh sách các bộ phận vào combobox
-            }    
+            }
+        }
+
+        private void LoadDataFromGrv()
+        {
+            //hiển thị thông tin vào các textbox, combobox, khi ta chọn một dòng trong gridview
+            txtTenNhanVien.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "TENNV"));
+            txtMaNhanVien.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "MANV"));
+            txtDienThoai.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "DIENTHOAI"));
+            txtDiaChi.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "DIACHI"));
+            cbGioiTinh.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "GIOITINH"));
+            dtpNgaySinh.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "NGAYSINH"));
         }
 
         private void loadNhanVien()
         {
-            dgvDanhsachnhanvien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDanhsachnhanvien.DataSource = nhanVienDAO.Instance.getNhanvien();//gán datasource cho gridview
-        }
-
-        private void Frm_NhanVien_Load(object sender, EventArgs e)
-        {
-
+            dgvDanhSachNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDanhSachNhanVien.DataSource = nhanVienDAO.Instance.getNhanvien();//gán datasource cho gridview
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtDiachi.Text == string.Empty)
+            if (txtDiaChi.Text == string.Empty)
                 MessageBox.Show("Hãy nhập vào địa chỉ ");
             else
             {
@@ -82,11 +77,11 @@ namespace QuanLyNhaHang
                                 //lấy thông tin từ textbox, combobox,....
                                 int maNV = int.Parse(txtMaNhanVien.Text);
                                 string tenNV = txtTenNhanVien.Text;
-                                string dc = txtDiachi.Text;
-                                string dienthoai = txtDienthoai.Text;
+                                string dc = txtDiaChi.Text;
+                                string dienthoai = txtDienThoai.Text;
                                 string boPhan = cbBoPhan.Text;
-                                string gioitinh = cbGioitinh.Text;
-                                string ngaysinh = dtpNgaysinh.Text;
+                                string gioitinh = cbGioiTinh.Text;
+                                string ngaysinh = dtpNgaySinh.Text;
                                 DateTime ngaySinh = Convert.ToDateTime(ngaysinh);
                                 if (nhanVienDAO.Instance.insertNhanvien(maNV, tenNV, boPhan, dienthoai, dc, gioitinh, ngaySinh))//gọi hàm insert để insert vào database
                                 {
@@ -116,16 +111,15 @@ namespace QuanLyNhaHang
                     }
                 }
             }
-
         }
 
-        private void btnCapnhat_Click(object sender, EventArgs e)
+        private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (txtDiachi.Text == string.Empty)
+            if (txtDiaChi.Text == string.Empty)
                 MessageBox.Show("Hãy nhập vào địa chỉ ");
             else
             {
-                if (txtDienthoai.Text == string.Empty)
+                if (txtDienThoai.Text == string.Empty)
                 {
                     MessageBox.Show("Hãy nhập vào số điện thoại");
                 }
@@ -148,11 +142,11 @@ namespace QuanLyNhaHang
                                 //lấy thông tin từ các textbox, combobox
                                 int maNV = int.Parse(txtMaNhanVien.Text);
                                 string tenNV = txtTenNhanVien.Text;
-                                string dc = txtDiachi.Text;
-                                string dienthoai = txtDienthoai.Text;
+                                string dc = txtDiaChi.Text;
+                                string dienthoai = txtDienThoai.Text;
                                 string boPhan = cbBoPhan.Text;
-                                string gioitinh = cbGioitinh.Text;
-                                string ngaysinh = dtpNgaysinh.Text;
+                                string gioitinh = cbGioiTinh.Text;
+                                string ngaysinh = dtpNgaySinh.Text;
                                 DateTime ngaySinh = Convert.ToDateTime(ngaysinh);
                                 if (nhanVienDAO.Instance.updateNhanvien(maNV, tenNV, boPhan, dienthoai, dc, gioitinh, ngaySinh))//gọi hàm update để sửa thông tin nhân viên trong database
                                 {
@@ -204,22 +198,17 @@ namespace QuanLyNhaHang
 
         }
 
-        private void dgvDanhsachnhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvDanhsachnhanvien_SelectionChanged(object sender, EventArgs e)
+        private void dgvDanhSachNhanVien_SelectionChanged(object sender, EventArgs e)
         {
             // loaddatafromGrv();
 
-            txtMaNhanVien.Text = dgvDanhsachnhanvien.CurrentRow.Cells[0].Value.ToString();
-            cbBoPhan.SelectedValue = dgvDanhsachnhanvien.CurrentRow.Cells[1].Value.ToString();
-            txtTenNhanVien.Text = dgvDanhsachnhanvien.CurrentRow.Cells[2].Value.ToString();
-            cbGioitinh.Text = dgvDanhsachnhanvien.CurrentRow.Cells[3].Value.ToString();
-            dtpNgaysinh.Text = dgvDanhsachnhanvien.CurrentRow.Cells[4].Value.ToString();
-            txtDiachi.Text = dgvDanhsachnhanvien.CurrentRow.Cells[5].Value.ToString();
-            txtDienthoai.Text = dgvDanhsachnhanvien.CurrentRow.Cells[6].Value.ToString();
+            txtMaNhanVien.Text = dgvDanhSachNhanVien.CurrentRow.Cells[0].Value.ToString();
+            cbBoPhan.SelectedValue = dgvDanhSachNhanVien.CurrentRow.Cells[1].Value.ToString();
+            txtTenNhanVien.Text = dgvDanhSachNhanVien.CurrentRow.Cells[2].Value.ToString();
+            cbGioiTinh.Text = dgvDanhSachNhanVien.CurrentRow.Cells[3].Value.ToString();
+            dtpNgaySinh.Text = dgvDanhSachNhanVien.CurrentRow.Cells[4].Value.ToString();
+            txtDiaChi.Text = dgvDanhSachNhanVien.CurrentRow.Cells[5].Value.ToString();
+            txtDienThoai.Text = dgvDanhSachNhanVien.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void Frm_NhanVien_FormClosing(object sender, FormClosingEventArgs e)
@@ -229,7 +218,7 @@ namespace QuanLyNhaHang
                 e.Cancel = true;
         }
 
-        private void txtDienthoai_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -247,7 +236,7 @@ namespace QuanLyNhaHang
             }
         }
 
-        private void txtMaNhanVien_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtMaNhanVien_Leave(object sender, EventArgs e)
         {
             if (txtMaNhanVien.Text.Trim().Length == 0)
                 this.errorProvider1.SetError(txtMaNhanVien, "Phải nhập mã nhân viên !");

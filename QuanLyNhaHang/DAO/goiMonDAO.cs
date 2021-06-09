@@ -31,9 +31,9 @@ namespace DAO
             int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateSTTBan @maban ", new object[] { maBan });
             return n > 0;
         }
-        public bool insertHD(int MAHDX, int MABAN, int MANV, DateTime THOIGIANVAO, int MAKH)
+        public bool insertHD(int MAHDX, int MABAN, int MANV, DateTime THOIGIANVAO)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertHD @mahd , @maban , @manhanvien , @thoigianvao , @makh ", new object[] { MAHDX, MABAN, MANV, THOIGIANVAO, MAKH });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertHD @mahd , @maban , @manhanvien , @thoigianvao  ", new object[] { MAHDX, MABAN, MANV, THOIGIANVAO });
             return n > 0;
         }
         public bool insertCTHD(int MACTHDX, int MAHDX, int MAMA, float SOLUONG)

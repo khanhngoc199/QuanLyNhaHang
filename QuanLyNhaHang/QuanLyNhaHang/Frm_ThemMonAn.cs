@@ -25,7 +25,10 @@ namespace QuanLyNhaHang
 
         private void loadCB()
         {
-            throw new NotImplementedException();
+            //load danh sách nhóm món ăn cho combobox
+            List<nhomMonAnDTO> group = nhomMonAnDAO.Instance.loadtennhom();
+            cbLoaiThucDon.DataSource = group;
+            cbLoaiThucDon.DisplayMember = "tennhom";
         }
 
         private void Frm_ThemMonAn_Load(object sender, EventArgs e)
@@ -101,6 +104,29 @@ namespace QuanLyNhaHang
 
                 }
             }
+        }
+        private void loadfoodbythucdon(int id)
+        {
+            //load danh sách món ăn cho combobox
+            list = monAnDAO.Instance.getlisbyID(id);
+            cbMonAn.DataSource = list;
+            cbMonAn.DisplayMember = "tenmonan";
+            //foreach(Monan_DTO mon in list)
+            //{
+            //    Cbbmon.Items.Add(mon.Tenmonan.ToString());
+            //}
+        }
+
+        private void cbLoaiThucDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //load danh sách món ăn theo nhóm món ăn được chọn ở combobox nhóm món ăn
+            int id = 0;
+            ComboBox cb = sender as ComboBox; //tạo đối tượng combobox và gán nó bằng sender được chọn
+            if (cb.SelectedItem == null)
+                return;
+            nhomMonAnDTO selected = cb.SelectedItem as nhomMonAnDTO;//tạo đối tượng nhóm món ăn
+            id = selected.MaNhom;//lấy mã nhóm món ăn
+            loadfoodbythucdon(id);//load danh sách món ăn theo mã món ăn
         }
     }
 }

@@ -27,66 +27,13 @@ namespace QuanLyNhaHang
 
         private void Frm_Ban_Load(object sender, EventArgs e)
         {
-
+            txtMaBan.Focus();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             //Lấy các giá trị từ các textbox
-            string tenBan = txtTenBan.Text;
-            string tenKV = lsbTenKhuVuc.Text;
-            string trangThai = lsbTrangThai.Text;
-            if (tenBan == string.Empty)//kiểm tra tên bàn đã được nhập chưa
-            {
-                MessageBox.Show("Hãy Nhập Tên Bàn");
-            }
-            else
-            {
-                if (tenKV == string.Empty)//kiểm tra tên kv có được nhập chưa
-                {
-                    MessageBox.Show("Hãy Nhập Tên Khu Vực");
-                }
-                else
-                {
-                    if (trangThai == string.Empty)//kiểm tra trạng thái bàn đã được nhập chưa
-                    {
-                        MessageBox.Show("Hãy Nhập Trạng Thái");
-                    }
-                    else
-                    {
-                        if (txtMaBan.Text == string.Empty)//Kiểm tra mã bàn đã được nhập chưa
-                            MessageBox.Show("Hãy Nhập Mã Bàn");
-                        else
-                        {
-                            try
-                            {
-                                int maban = int.Parse(txtMaBan.Text);
-                                if (banDAO.Instance.insertBan(maban, tenBan, tenKV, trangThai))//truyên tham số vào hàm insert trong lớp ban_DAO
-                                {
-                                    MessageBox.Show("Thành công!");
-                                    loadBan();//load lại gridview danh sách bàn
-
-                                    foreach (Control i in this.Controls)
-                                    {
-                                        if (i is TextBox || i is ListBox)
-                                            i.ResetText();
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Thất bại !");
-                                }
-                            }
-                            catch
-                            {
-                                MessageBox.Show("Nhập sai mã bàn !");
-
-                            }
-                        }
-                    }
-
-                }
-            }
+            
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -177,9 +124,102 @@ namespace QuanLyNhaHang
                 e.Cancel = true;
         }
 
-        private void grbBan_Enter(object sender, EventArgs e)
+        private void txtMaBan_TextChanged(object sender, EventArgs e)
         {
-            this.grbBan.BackColor = Color.Transparent;
+            if (txtMaBan.Text != string.Empty && txtTenBan.Text != string.Empty)
+            {
+                btnThem.Enabled = true;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+            }
+            else
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+        }
+
+        private void txtTenBan_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMaBan.Text != string.Empty && txtTenBan.Text != string.Empty)
+            {
+                btnThem.Enabled = true;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+            }
+            else
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+        }
+
+        private void dgvDanhSachBan_SelectionChanged(object sender, EventArgs e)
+        {
+            txtMaBan.Text = dgvDanhSachBan.CurrentRow.Cells[0].Value.ToString();
+            lsbTenKhuVuc.Text = dgvDanhSachBan.CurrentRow.Cells[1].Value.ToString();
+            txtTenBan.Text = dgvDanhSachBan.CurrentRow.Cells[2].Value.ToString();
+            lsbTrangThai.Text = dgvDanhSachBan.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            string tenBan = txtTenBan.Text;
+            string tenKV = lsbTenKhuVuc.Text;
+            string trangThai = lsbTrangThai.Text;
+            if (tenBan == string.Empty)//kiểm tra tên bàn đã được nhập chưa
+            {
+                MessageBox.Show("Hãy Nhập Tên Bàn");
+            }
+            else
+            {
+                if (tenKV == string.Empty)//kiểm tra tên kv có được nhập chưa
+                {
+                    MessageBox.Show("Hãy Nhập Tên Khu Vực");
+                }
+                else
+                {
+                    if (trangThai == string.Empty)//kiểm tra trạng thái bàn đã được nhập chưa
+                    {
+                        MessageBox.Show("Hãy Nhập Trạng Thái");
+                    }
+                    else
+                    {
+                        if (txtMaBan.Text == string.Empty)//Kiểm tra mã bàn đã được nhập chưa
+                            MessageBox.Show("Hãy Nhập Mã Bàn");
+                        else
+                        {
+                            try
+                            {
+                                int maban = int.Parse(txtMaBan.Text);
+                                if (banDAO.Instance.insertBan(maban, tenBan, tenKV, trangThai))//truyên tham số vào hàm insert trong lớp ban_DAO
+                                {
+                                    MessageBox.Show("Thành công!");
+                                    loadBan();//load lại gridview danh sách bàn
+
+                                    foreach (Control i in this.Controls)
+                                    {
+                                        if (i is TextBox || i is ListBox)
+                                            i.ResetText();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Thất bại !");
+                                }
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Nhập sai mã bàn !");
+
+                            }
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

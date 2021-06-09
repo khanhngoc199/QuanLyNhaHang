@@ -17,6 +17,11 @@ namespace QuanLyNhaHang
             InitializeComponent();
         }
 
-       
+        private void Frm_PhanQuyen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn muốn thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (r == DialogResult.No)
+                e.Cancel = true;
+        }
     }
 }

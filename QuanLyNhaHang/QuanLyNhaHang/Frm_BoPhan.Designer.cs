@@ -28,26 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtMaChucNang = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.txtMaBoPhan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gpbDanhSachChucNang = new System.Windows.Forms.GroupBox();
-            this.gvvDanhSachChucNang = new System.Windows.Forms.DataGridView();
+            this.gvvDanhSachBoPhan = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtTenChucNang = new System.Windows.Forms.TextBox();
+            this.txtTenBoPhan = new System.Windows.Forms.TextBox();
             this.lbl_TenBoPhan = new System.Windows.Forms.Label();
-            this.MACHUCNANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENCHUCNANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MABP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbDanhSachChucNang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachChucNang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachBoPhan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtMaChucNang
+            // txtMaBoPhan
             // 
-            this.txtMaChucNang.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaChucNang.Location = new System.Drawing.Point(125, 19);
-            this.txtMaChucNang.Name = "txtMaChucNang";
-            this.txtMaChucNang.Size = new System.Drawing.Size(204, 27);
-            this.txtMaChucNang.TabIndex = 43;
+            this.txtMaBoPhan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaBoPhan.Location = new System.Drawing.Point(125, 19);
+            this.txtMaBoPhan.Name = "txtMaBoPhan";
+            this.txtMaBoPhan.Size = new System.Drawing.Size(204, 27);
+            this.txtMaBoPhan.TabIndex = 43;
+            this.txtMaBoPhan.TextChanged += new System.EventHandler(this.txtMaBoPhan_TextChanged);
+            this.txtMaBoPhan.Leave += new System.EventHandler(this.txtMaBoPhan_Leave);
             // 
             // label1
             // 
@@ -55,13 +60,13 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 19);
+            this.label1.Size = new System.Drawing.Size(92, 19);
             this.label1.TabIndex = 48;
-            this.label1.Text = "Mã chức năng:";
+            this.label1.Text = "Mã bộ phận:";
             // 
             // gpbDanhSachChucNang
             // 
-            this.gpbDanhSachChucNang.Controls.Add(this.gvvDanhSachChucNang);
+            this.gpbDanhSachChucNang.Controls.Add(this.gvvDanhSachBoPhan);
             this.gpbDanhSachChucNang.Font = new System.Drawing.Font("Times New Roman", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDanhSachChucNang.Location = new System.Drawing.Point(15, 101);
             this.gpbDanhSachChucNang.Name = "gpbDanhSachChucNang";
@@ -69,18 +74,19 @@
             this.gpbDanhSachChucNang.TabIndex = 46;
             this.gpbDanhSachChucNang.TabStop = false;
             // 
-            // gvvDanhSachChucNang
+            // gvvDanhSachBoPhan
             // 
-            this.gvvDanhSachChucNang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvvDanhSachChucNang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MACHUCNANG,
-            this.TENCHUCNANG});
-            this.gvvDanhSachChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvvDanhSachChucNang.Location = new System.Drawing.Point(3, 17);
-            this.gvvDanhSachChucNang.Name = "gvvDanhSachChucNang";
-            this.gvvDanhSachChucNang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvvDanhSachChucNang.Size = new System.Drawing.Size(342, 162);
-            this.gvvDanhSachChucNang.TabIndex = 0;
+            this.gvvDanhSachBoPhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvvDanhSachBoPhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MABP,
+            this.TENBP});
+            this.gvvDanhSachBoPhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvvDanhSachBoPhan.Location = new System.Drawing.Point(3, 17);
+            this.gvvDanhSachBoPhan.Name = "gvvDanhSachBoPhan";
+            this.gvvDanhSachBoPhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvvDanhSachBoPhan.Size = new System.Drawing.Size(342, 162);
+            this.gvvDanhSachBoPhan.TabIndex = 0;
+            this.gvvDanhSachBoPhan.SelectionChanged += new System.EventHandler(this.gvvDanhSachBoPhan_SelectionChanged);
             // 
             // btnThem
             // 
@@ -94,14 +100,16 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtTenChucNang
+            // txtTenBoPhan
             // 
-            this.txtTenChucNang.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenChucNang.Location = new System.Drawing.Point(125, 50);
-            this.txtTenChucNang.Name = "txtTenChucNang";
-            this.txtTenChucNang.Size = new System.Drawing.Size(204, 27);
-            this.txtTenChucNang.TabIndex = 44;
+            this.txtTenBoPhan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBoPhan.Location = new System.Drawing.Point(125, 50);
+            this.txtTenBoPhan.Name = "txtTenBoPhan";
+            this.txtTenBoPhan.Size = new System.Drawing.Size(204, 27);
+            this.txtTenBoPhan.TabIndex = 44;
+            this.txtTenBoPhan.TextChanged += new System.EventHandler(this.txtTenBoPhan_TextChanged);
             // 
             // lbl_TenBoPhan
             // 
@@ -109,38 +117,45 @@
             this.lbl_TenBoPhan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TenBoPhan.Location = new System.Drawing.Point(11, 53);
             this.lbl_TenBoPhan.Name = "lbl_TenBoPhan";
-            this.lbl_TenBoPhan.Size = new System.Drawing.Size(111, 19);
+            this.lbl_TenBoPhan.Size = new System.Drawing.Size(95, 19);
             this.lbl_TenBoPhan.TabIndex = 47;
-            this.lbl_TenBoPhan.Text = "Tên chức năng:";
+            this.lbl_TenBoPhan.Text = "Tên bộ phận:";
             // 
-            // MACHUCNANG
+            // errorProvider1
             // 
-            this.MACHUCNANG.DataPropertyName = "MACHUCNANG";
-            this.MACHUCNANG.HeaderText = "MÃ CHỨC NĂNG";
-            this.MACHUCNANG.Name = "MACHUCNANG";
+            this.errorProvider1.ContainerControl = this;
             // 
-            // TENCHUCNANG
+            // MABP
             // 
-            this.TENCHUCNANG.DataPropertyName = "TENCHUCNANG";
-            this.TENCHUCNANG.HeaderText = "TÊN CHỨC NĂNG";
-            this.TENCHUCNANG.Name = "TENCHUCNANG";
-            this.TENCHUCNANG.Width = 200;
+            this.MABP.DataPropertyName = "MABP";
+            this.MABP.HeaderText = "MÃ BỘ PHẬN";
+            this.MABP.Name = "MABP";
+            // 
+            // TENBP
+            // 
+            this.TENBP.DataPropertyName = "TENBP";
+            this.TENBP.HeaderText = "TÊN BỘ PHẬN";
+            this.TENBP.Name = "TENBP";
+            this.TENBP.Width = 200;
             // 
             // Frm_BoPhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 324);
-            this.Controls.Add(this.txtMaChucNang);
+            this.Controls.Add(this.txtMaBoPhan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gpbDanhSachChucNang);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.txtTenChucNang);
+            this.Controls.Add(this.txtTenBoPhan);
             this.Controls.Add(this.lbl_TenBoPhan);
             this.Name = "Frm_BoPhan";
             this.Text = "Frm_BoPhan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_BoPhan_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_BoPhan_Load);
             this.gpbDanhSachChucNang.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachChucNang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachBoPhan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,14 +163,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtMaChucNang;
+        private System.Windows.Forms.TextBox txtMaBoPhan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gpbDanhSachChucNang;
-        private System.Windows.Forms.DataGridView gvvDanhSachChucNang;
+        private System.Windows.Forms.DataGridView gvvDanhSachBoPhan;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtTenChucNang;
+        private System.Windows.Forms.TextBox txtTenBoPhan;
         private System.Windows.Forms.Label lbl_TenBoPhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MACHUCNANG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENCHUCNANG;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MABP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENBP;
     }
 }

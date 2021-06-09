@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,6 +45,11 @@
             this.cbMonAn = new System.Windows.Forms.ComboBox();
             this.cbLoaiThucDon = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnGoiMon = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDiaChi
@@ -161,6 +167,7 @@
             this.txtMaChiTietHoaDon.Name = "txtMaChiTietHoaDon";
             this.txtMaChiTietHoaDon.Size = new System.Drawing.Size(234, 27);
             this.txtMaChiTietHoaDon.TabIndex = 22;
+            this.txtMaChiTietHoaDon.Leave += new System.EventHandler(this.txtMaChiTietHoaDon_Leave);
             // 
             // txtMaHoaDon
             // 
@@ -170,6 +177,7 @@
             this.txtMaHoaDon.Name = "txtMaHoaDon";
             this.txtMaHoaDon.Size = new System.Drawing.Size(234, 27);
             this.txtMaHoaDon.TabIndex = 21;
+            this.txtMaHoaDon.Leave += new System.EventHandler(this.txtMaHoaDon_Leave);
             // 
             // cbMonAn
             // 
@@ -190,6 +198,7 @@
             this.cbLoaiThucDon.Name = "cbLoaiThucDon";
             this.cbLoaiThucDon.Size = new System.Drawing.Size(234, 28);
             this.cbLoaiThucDon.TabIndex = 33;
+            this.cbLoaiThucDon.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThucDon_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -201,11 +210,34 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "Địa chỉ:";
             // 
+            // btnGoiMon
+            // 
+            this.btnGoiMon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGoiMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoiMon.Location = new System.Drawing.Point(336, 318);
+            this.btnGoiMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGoiMon.Name = "btnGoiMon";
+            this.btnGoiMon.Size = new System.Drawing.Size(103, 46);
+            this.btnGoiMon.TabIndex = 41;
+            this.btnGoiMon.Text = "Gọi Món";
+            this.btnGoiMon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGoiMon.UseVisualStyleBackColor = true;
+            this.btnGoiMon.Click += new System.EventHandler(this.btnGoiMon_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // Frm_ChonMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 323);
+            this.ClientSize = new System.Drawing.Size(451, 377);
+            this.Controls.Add(this.btnGoiMon);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label8);
@@ -225,6 +257,8 @@
             this.Name = "Frm_ChonMon";
             this.Text = "Frm_ChonMon";
             this.Load += new System.EventHandler(this.Frm_ChonMon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +281,8 @@
         private System.Windows.Forms.ComboBox cbMonAn;
         private System.Windows.Forms.ComboBox cbLoaiThucDon;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnGoiMon;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

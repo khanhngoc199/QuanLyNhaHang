@@ -32,19 +32,19 @@ namespace DAO
         {
             return Database.Instrance.ExecuteQuery("SELECT * FROM DBO.BAN");//thực hiện câu truy vấn trên sql thông qua code c#
         }
-        public bool insertBan(int maban, string tenban, string tenkhuvuc, string trangthai)//hàm insert thông tin bàn
+        public bool insertBan(int maBan, string tenBan, string tenKhuVuc, string trangThai)//hàm insert thông tin bàn
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC usp_insertban @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maban, tenban, tenkhuvuc, trangthai });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
             return n > 0;
         }
-        public bool updatetBan(int maban, string tenban, string tenkhuvuc, string trangthai)//hàm update bàn
+        public bool updatetBan(int maBan, string tenBan, string tenKhuVuc, string trangThai)//hàm update bàn
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC usp_updateban @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maban, tenban, tenkhuvuc, trangthai });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
             return n > 0;
         }
-        public bool deleteban(int maban)//hàm xóa bàn
+        public bool deleteban(int maBan)//hàm xóa bàn
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC usp_deleteban @maban", new object[] { maban });
+            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_deleteBan @maban", new object[] { maBan });
             return n > 0;
         }
         public List<banDTO> getlistban()//hàm lấy danh sách bàn và add vào mảng

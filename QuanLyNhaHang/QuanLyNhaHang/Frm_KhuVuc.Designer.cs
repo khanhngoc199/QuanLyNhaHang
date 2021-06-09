@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.lbl_qlkv = new System.Windows.Forms.Label();
@@ -44,9 +45,11 @@
             this.lbl_trangthai = new System.Windows.Forms.Label();
             this.lbl_tenkv = new System.Windows.Forms.Label();
             this.lbl_makv = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbDanhSachKhuVuc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachKhuVuc)).BeginInit();
             this.gb_khuvuc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
@@ -61,6 +64,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -74,6 +78,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lbl_qlkv
             // 
@@ -121,6 +126,7 @@
             this.gvvDanhSachKhuVuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvvDanhSachKhuVuc.Size = new System.Drawing.Size(469, 209);
             this.gvvDanhSachKhuVuc.TabIndex = 23;
+            this.gvvDanhSachKhuVuc.SelectionChanged += new System.EventHandler(this.gvvDanhSachKhuVuc_SelectionChanged);
             // 
             // MAKV
             // 
@@ -168,7 +174,7 @@
             this.lsbTrangThai.Location = new System.Drawing.Point(132, 110);
             this.lsbTrangThai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsbTrangThai.Name = "lsbTrangThai";
-            this.lsbTrangThai.Size = new System.Drawing.Size(180, 19);
+            this.lsbTrangThai.Size = new System.Drawing.Size(180, 23);
             this.lsbTrangThai.TabIndex = 2;
             // 
             // lsbTenKhuVuc
@@ -185,7 +191,7 @@
             this.lsbTenKhuVuc.Location = new System.Drawing.Point(132, 68);
             this.lsbTenKhuVuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsbTenKhuVuc.Name = "lsbTenKhuVuc";
-            this.lsbTenKhuVuc.Size = new System.Drawing.Size(180, 19);
+            this.lsbTenKhuVuc.Size = new System.Drawing.Size(180, 23);
             this.lsbTenKhuVuc.TabIndex = 1;
             // 
             // txtMaKhuVuc
@@ -195,6 +201,7 @@
             this.txtMaKhuVuc.Name = "txtMaKhuVuc";
             this.txtMaKhuVuc.Size = new System.Drawing.Size(180, 27);
             this.txtMaKhuVuc.TabIndex = 0;
+            this.txtMaKhuVuc.Leave += new System.EventHandler(this.txtMaKhuVuc_Leave);
             // 
             // lbl_trangthai
             // 
@@ -223,6 +230,10 @@
             this.lbl_makv.TabIndex = 0;
             this.lbl_makv.Text = "Mã Khu Vực:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Frm_KhuVuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,11 +247,13 @@
             this.Controls.Add(this.gb_khuvuc);
             this.Name = "Frm_KhuVuc";
             this.Text = "Frm_KhuVuc";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_KhuVuc_FormClosing);
             this.Load += new System.EventHandler(this.Frm_KhuVuc_Load);
             this.gbDanhSachKhuVuc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachKhuVuc)).EndInit();
             this.gb_khuvuc.ResumeLayout(false);
             this.gb_khuvuc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +277,6 @@
         private System.Windows.Forms.Label lbl_trangthai;
         private System.Windows.Forms.Label lbl_tenkv;
         private System.Windows.Forms.Label lbl_makv;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

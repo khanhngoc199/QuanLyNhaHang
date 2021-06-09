@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.gb_qlthucdon = new System.Windows.Forms.GroupBox();
-            this.cboLoaiTD = new System.Windows.Forms.ComboBox();
-            this.txt_dongiaton = new System.Windows.Forms.TextBox();
-            this.txt_dvt = new System.Windows.Forms.TextBox();
-            this.txt_tenthucdon = new System.Windows.Forms.TextBox();
-            this.txt_mathucdon = new System.Windows.Forms.TextBox();
-            this.lsb_trangthai = new System.Windows.Forms.ListBox();
+            this.cbTenNhomMonAn = new System.Windows.Forms.ComboBox();
+            this.txtDonGiaTinh = new System.Windows.Forms.TextBox();
+            this.txtDonViTinh = new System.Windows.Forms.TextBox();
+            this.txtTenMonAn = new System.Windows.Forms.TextBox();
+            this.txtMaMonAn = new System.Windows.Forms.TextBox();
+            this.lsbTrangThai = new System.Windows.Forms.ListBox();
             this.lbl_trangthai = new System.Windows.Forms.Label();
             this.lbl_dongiaton = new System.Windows.Forms.Label();
             this.lbl_donvitinh = new System.Windows.Forms.Label();
@@ -58,12 +58,12 @@
             // 
             // gb_qlthucdon
             // 
-            this.gb_qlthucdon.Controls.Add(this.cboLoaiTD);
-            this.gb_qlthucdon.Controls.Add(this.txt_dongiaton);
-            this.gb_qlthucdon.Controls.Add(this.txt_dvt);
-            this.gb_qlthucdon.Controls.Add(this.txt_tenthucdon);
-            this.gb_qlthucdon.Controls.Add(this.txt_mathucdon);
-            this.gb_qlthucdon.Controls.Add(this.lsb_trangthai);
+            this.gb_qlthucdon.Controls.Add(this.cbTenNhomMonAn);
+            this.gb_qlthucdon.Controls.Add(this.txtDonGiaTinh);
+            this.gb_qlthucdon.Controls.Add(this.txtDonViTinh);
+            this.gb_qlthucdon.Controls.Add(this.txtTenMonAn);
+            this.gb_qlthucdon.Controls.Add(this.txtMaMonAn);
+            this.gb_qlthucdon.Controls.Add(this.lsbTrangThai);
             this.gb_qlthucdon.Controls.Add(this.lbl_trangthai);
             this.gb_qlthucdon.Controls.Add(this.lbl_dongiaton);
             this.gb_qlthucdon.Controls.Add(this.lbl_donvitinh);
@@ -77,54 +77,55 @@
             this.gb_qlthucdon.TabIndex = 35;
             this.gb_qlthucdon.TabStop = false;
             // 
-            // cboLoaiTD
+            // cbTenNhomMonAn
             // 
-            this.cboLoaiTD.FormattingEnabled = true;
-            this.cboLoaiTD.Location = new System.Drawing.Point(161, 56);
-            this.cboLoaiTD.Name = "cboLoaiTD";
-            this.cboLoaiTD.Size = new System.Drawing.Size(151, 27);
-            this.cboLoaiTD.TabIndex = 1;
+            this.cbTenNhomMonAn.FormattingEnabled = true;
+            this.cbTenNhomMonAn.Location = new System.Drawing.Point(161, 56);
+            this.cbTenNhomMonAn.Name = "cbTenNhomMonAn";
+            this.cbTenNhomMonAn.Size = new System.Drawing.Size(151, 27);
+            this.cbTenNhomMonAn.TabIndex = 1;
             // 
-            // txt_dongiaton
+            // txtDonGiaTinh
             // 
-            this.txt_dongiaton.Location = new System.Drawing.Point(161, 162);
-            this.txt_dongiaton.Name = "txt_dongiaton";
-            this.txt_dongiaton.Size = new System.Drawing.Size(151, 27);
-            this.txt_dongiaton.TabIndex = 4;
+            this.txtDonGiaTinh.Location = new System.Drawing.Point(161, 162);
+            this.txtDonGiaTinh.Name = "txtDonGiaTinh";
+            this.txtDonGiaTinh.Size = new System.Drawing.Size(151, 27);
+            this.txtDonGiaTinh.TabIndex = 4;
+            this.txtDonGiaTinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGiaTinh_KeyPress);
             // 
-            // txt_dvt
+            // txtDonViTinh
             // 
-            this.txt_dvt.Location = new System.Drawing.Point(161, 128);
-            this.txt_dvt.Name = "txt_dvt";
-            this.txt_dvt.Size = new System.Drawing.Size(151, 27);
-            this.txt_dvt.TabIndex = 3;
+            this.txtDonViTinh.Location = new System.Drawing.Point(161, 128);
+            this.txtDonViTinh.Name = "txtDonViTinh";
+            this.txtDonViTinh.Size = new System.Drawing.Size(151, 27);
+            this.txtDonViTinh.TabIndex = 3;
             // 
-            // txt_tenthucdon
+            // txtTenMonAn
             // 
-            this.txt_tenthucdon.Location = new System.Drawing.Point(161, 91);
-            this.txt_tenthucdon.Name = "txt_tenthucdon";
-            this.txt_tenthucdon.Size = new System.Drawing.Size(151, 27);
-            this.txt_tenthucdon.TabIndex = 2;
+            this.txtTenMonAn.Location = new System.Drawing.Point(161, 91);
+            this.txtTenMonAn.Name = "txtTenMonAn";
+            this.txtTenMonAn.Size = new System.Drawing.Size(151, 27);
+            this.txtTenMonAn.TabIndex = 2;
             // 
-            // txt_mathucdon
+            // txtMaMonAn
             // 
-            this.txt_mathucdon.Location = new System.Drawing.Point(161, 20);
-            this.txt_mathucdon.Name = "txt_mathucdon";
-            this.txt_mathucdon.Size = new System.Drawing.Size(151, 27);
-            this.txt_mathucdon.TabIndex = 0;
+            this.txtMaMonAn.Location = new System.Drawing.Point(161, 20);
+            this.txtMaMonAn.Name = "txtMaMonAn";
+            this.txtMaMonAn.Size = new System.Drawing.Size(151, 27);
+            this.txtMaMonAn.TabIndex = 0;
             // 
-            // lsb_trangthai
+            // lsbTrangThai
             // 
-            this.lsb_trangthai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lsb_trangthai.FormattingEnabled = true;
-            this.lsb_trangthai.ItemHeight = 19;
-            this.lsb_trangthai.Items.AddRange(new object[] {
+            this.lsbTrangThai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbTrangThai.FormattingEnabled = true;
+            this.lsbTrangThai.ItemHeight = 19;
+            this.lsbTrangThai.Items.AddRange(new object[] {
             "Còn hàng",
             "Tạm hết"});
-            this.lsb_trangthai.Location = new System.Drawing.Point(161, 201);
-            this.lsb_trangthai.Name = "lsb_trangthai";
-            this.lsb_trangthai.Size = new System.Drawing.Size(151, 19);
-            this.lsb_trangthai.TabIndex = 5;
+            this.lsbTrangThai.Location = new System.Drawing.Point(161, 201);
+            this.lsbTrangThai.Name = "lsbTrangThai";
+            this.lsbTrangThai.Size = new System.Drawing.Size(151, 23);
+            this.lsbTrangThai.TabIndex = 5;
             // 
             // lbl_trangthai
             // 
@@ -204,6 +205,7 @@
             this.gvvDanhSachMonAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvvDanhSachMonAn.Size = new System.Drawing.Size(541, 232);
             this.gvvDanhSachMonAn.TabIndex = 23;
+            this.gvvDanhSachMonAn.SelectionChanged += new System.EventHandler(this.gvvDanhSachMonAn_SelectionChanged);
             // 
             // MAMA
             // 
@@ -247,6 +249,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -260,6 +263,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -273,6 +277,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // Frm_MonAn
             // 
@@ -286,6 +291,8 @@
             this.Controls.Add(this.btnThem);
             this.Name = "Frm_MonAn";
             this.Text = "Frm_MonAn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_MonAn_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_MonAn_Load);
             this.gb_qlthucdon.ResumeLayout(false);
             this.gb_qlthucdon.PerformLayout();
             this.grbDanhSachMonAn.ResumeLayout(false);
@@ -297,12 +304,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gb_qlthucdon;
-        private System.Windows.Forms.ComboBox cboLoaiTD;
-        private System.Windows.Forms.TextBox txt_dongiaton;
-        private System.Windows.Forms.TextBox txt_dvt;
-        private System.Windows.Forms.TextBox txt_tenthucdon;
-        private System.Windows.Forms.TextBox txt_mathucdon;
-        private System.Windows.Forms.ListBox lsb_trangthai;
+        private System.Windows.Forms.ComboBox cbTenNhomMonAn;
+        private System.Windows.Forms.TextBox txtDonGiaTinh;
+        private System.Windows.Forms.TextBox txtDonViTinh;
+        private System.Windows.Forms.TextBox txtTenMonAn;
+        private System.Windows.Forms.TextBox txtMaMonAn;
+        private System.Windows.Forms.ListBox lsbTrangThai;
         private System.Windows.Forms.Label lbl_trangthai;
         private System.Windows.Forms.Label lbl_dongiaton;
         private System.Windows.Forms.Label lbl_donvitinh;

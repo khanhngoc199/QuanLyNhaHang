@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gb_qlnguyenlieu = new System.Windows.Forms.GroupBox();
-            this.cboLoaiNguyeLieu = new System.Windows.Forms.ComboBox();
-            this.txtDonGiatinh = new System.Windows.Forms.TextBox();
+            this.cbLoaiNguyenLieu = new System.Windows.Forms.ComboBox();
+            this.txtDonGiaTinh = new System.Windows.Forms.TextBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenNguyenLieu = new System.Windows.Forms.TextBox();
             this.txtMaNguyenLieu = new System.Windows.Forms.TextBox();
@@ -45,21 +46,23 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.lblQLNguyenLieu = new System.Windows.Forms.Label();
             this.grb_DSNguyenLieu = new System.Windows.Forms.GroupBox();
-            this.gvv_DSThucDon = new System.Windows.Forms.DataGridView();
+            this.gvvDanhSachThucDon = new System.Windows.Forms.DataGridView();
             this.MANL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gb_qlnguyenlieu.SuspendLayout();
             this.grb_DSNguyenLieu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvv_DSThucDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachThucDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_qlnguyenlieu
             // 
-            this.gb_qlnguyenlieu.Controls.Add(this.cboLoaiNguyeLieu);
-            this.gb_qlnguyenlieu.Controls.Add(this.txtDonGiatinh);
+            this.gb_qlnguyenlieu.Controls.Add(this.cbLoaiNguyenLieu);
+            this.gb_qlnguyenlieu.Controls.Add(this.txtDonGiaTinh);
             this.gb_qlnguyenlieu.Controls.Add(this.txtDonViTinh);
             this.gb_qlnguyenlieu.Controls.Add(this.txtTenNguyenLieu);
             this.gb_qlnguyenlieu.Controls.Add(this.txtMaNguyenLieu);
@@ -75,20 +78,21 @@
             this.gb_qlnguyenlieu.TabIndex = 45;
             this.gb_qlnguyenlieu.TabStop = false;
             // 
-            // cboLoaiNguyeLieu
+            // cbLoaiNguyenLieu
             // 
-            this.cboLoaiNguyeLieu.FormattingEnabled = true;
-            this.cboLoaiNguyeLieu.Location = new System.Drawing.Point(164, 58);
-            this.cboLoaiNguyeLieu.Name = "cboLoaiNguyeLieu";
-            this.cboLoaiNguyeLieu.Size = new System.Drawing.Size(151, 28);
-            this.cboLoaiNguyeLieu.TabIndex = 1;
+            this.cbLoaiNguyenLieu.FormattingEnabled = true;
+            this.cbLoaiNguyenLieu.Location = new System.Drawing.Point(164, 58);
+            this.cbLoaiNguyenLieu.Name = "cbLoaiNguyenLieu";
+            this.cbLoaiNguyenLieu.Size = new System.Drawing.Size(151, 28);
+            this.cbLoaiNguyenLieu.TabIndex = 1;
             // 
-            // txtDonGiatinh
+            // txtDonGiaTinh
             // 
-            this.txtDonGiatinh.Location = new System.Drawing.Point(164, 167);
-            this.txtDonGiatinh.Name = "txtDonGiatinh";
-            this.txtDonGiatinh.Size = new System.Drawing.Size(151, 27);
-            this.txtDonGiatinh.TabIndex = 4;
+            this.txtDonGiaTinh.Location = new System.Drawing.Point(164, 167);
+            this.txtDonGiaTinh.Name = "txtDonGiaTinh";
+            this.txtDonGiaTinh.Size = new System.Drawing.Size(151, 27);
+            this.txtDonGiaTinh.TabIndex = 4;
+            this.txtDonGiaTinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGiaTinh_KeyPress);
             // 
             // txtDonViTinh
             // 
@@ -110,6 +114,7 @@
             this.txtMaNguyenLieu.Name = "txtMaNguyenLieu";
             this.txtMaNguyenLieu.Size = new System.Drawing.Size(151, 27);
             this.txtMaNguyenLieu.TabIndex = 0;
+            this.txtMaNguyenLieu.Leave += new System.EventHandler(this.txtMaNguyenLieu_Leave);
             // 
             // lbl_dongiaton
             // 
@@ -178,6 +183,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -191,6 +197,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -204,6 +211,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lblQLNguyenLieu
             // 
@@ -217,28 +225,29 @@
             // 
             // grb_DSNguyenLieu
             // 
-            this.grb_DSNguyenLieu.Controls.Add(this.gvv_DSThucDon);
+            this.grb_DSNguyenLieu.Controls.Add(this.gvvDanhSachThucDon);
             this.grb_DSNguyenLieu.Location = new System.Drawing.Point(361, 34);
             this.grb_DSNguyenLieu.Name = "grb_DSNguyenLieu";
             this.grb_DSNguyenLieu.Size = new System.Drawing.Size(547, 291);
             this.grb_DSNguyenLieu.TabIndex = 52;
             this.grb_DSNguyenLieu.TabStop = false;
             // 
-            // gvv_DSThucDon
+            // gvvDanhSachThucDon
             // 
-            this.gvv_DSThucDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvv_DSThucDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvvDanhSachThucDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvvDanhSachThucDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MANL,
             this.MANNL,
             this.TENNL,
             this.DONGIA,
             this.DONVITINH});
-            this.gvv_DSThucDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvv_DSThucDon.Location = new System.Drawing.Point(3, 16);
-            this.gvv_DSThucDon.Name = "gvv_DSThucDon";
-            this.gvv_DSThucDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvv_DSThucDon.Size = new System.Drawing.Size(541, 272);
-            this.gvv_DSThucDon.TabIndex = 23;
+            this.gvvDanhSachThucDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvvDanhSachThucDon.Location = new System.Drawing.Point(3, 16);
+            this.gvvDanhSachThucDon.Name = "gvvDanhSachThucDon";
+            this.gvvDanhSachThucDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvvDanhSachThucDon.Size = new System.Drawing.Size(541, 272);
+            this.gvvDanhSachThucDon.TabIndex = 23;
+            this.gvvDanhSachThucDon.SelectionChanged += new System.EventHandler(this.gvvDanhSachThucDon_SelectionChanged);
             // 
             // MANL
             // 
@@ -270,6 +279,10 @@
             this.DONVITINH.HeaderText = "Đơn Vị Tính";
             this.DONVITINH.Name = "DONVITINH";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Frm_NguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,10 +297,13 @@
             this.Controls.Add(this.lblQLNguyenLieu);
             this.Name = "Frm_NguyenLieu";
             this.Text = "Frm_NguyenLieu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_NguyenLieu_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_NguyenLieu_Load);
             this.gb_qlnguyenlieu.ResumeLayout(false);
             this.gb_qlnguyenlieu.PerformLayout();
             this.grb_DSNguyenLieu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvv_DSThucDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachThucDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,8 +312,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gb_qlnguyenlieu;
-        private System.Windows.Forms.ComboBox cboLoaiNguyeLieu;
-        private System.Windows.Forms.TextBox txtDonGiatinh;
+        private System.Windows.Forms.ComboBox cbLoaiNguyenLieu;
+        private System.Windows.Forms.TextBox txtDonGiaTinh;
         private System.Windows.Forms.TextBox txtDonViTinh;
         private System.Windows.Forms.TextBox txtTenNguyenLieu;
         private System.Windows.Forms.TextBox txtMaNguyenLieu;
@@ -312,11 +328,12 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label lblQLNguyenLieu;
         private System.Windows.Forms.GroupBox grb_DSNguyenLieu;
-        private System.Windows.Forms.DataGridView gvv_DSThucDon;
+        private System.Windows.Forms.DataGridView gvvDanhSachThucDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVITINH;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

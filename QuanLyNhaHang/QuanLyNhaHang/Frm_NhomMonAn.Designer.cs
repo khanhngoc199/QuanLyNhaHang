@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTenNhomMonAn = new System.Windows.Forms.TextBox();
             this.txtMaNhomMonAn = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -38,7 +39,9 @@
             this.TENNMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_MaNMA = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTenNhomMonAn
@@ -58,6 +61,7 @@
             this.txtMaNhomMonAn.Name = "txtMaNhomMonAn";
             this.txtMaNhomMonAn.Size = new System.Drawing.Size(257, 27);
             this.txtMaNhomMonAn.TabIndex = 38;
+            this.txtMaNhomMonAn.Leave += new System.EventHandler(this.txtMaNhomMonAn_Leave);
             // 
             // btnXoa
             // 
@@ -70,6 +74,7 @@
             this.btnXoa.TabIndex = 42;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -82,6 +87,7 @@
             this.btnSua.TabIndex = 41;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // lbl_TenNMA
             // 
@@ -106,6 +112,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(556, 241);
             this.dataGridView1.TabIndex = 44;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // MANMA
             // 
@@ -140,6 +147,11 @@
             this.btnThem.TabIndex = 40;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Frm_NhomMonAn
             // 
@@ -156,7 +168,10 @@
             this.Controls.Add(this.btnThem);
             this.Name = "Frm_NhomMonAn";
             this.Text = "Frm_NhomMonAn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_NhomMonAn_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_NhomMonAn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +189,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNMA;
         private System.Windows.Forms.Label lbl_MaNMA;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

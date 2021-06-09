@@ -64,6 +64,7 @@
             this.dgvDanhSachBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachBan.Size = new System.Drawing.Size(443, 230);
             this.dgvDanhSachBan.TabIndex = 25;
+            this.dgvDanhSachBan.SelectionChanged += new System.EventHandler(this.dgvDanhSachBan_SelectionChanged);
             // 
             // MABAN
             // 
@@ -143,7 +144,6 @@
             this.grbBan.Size = new System.Drawing.Size(333, 186);
             this.grbBan.TabIndex = 21;
             this.grbBan.TabStop = false;
-            this.grbBan.Enter += new System.EventHandler(this.grbBan_Enter);
             // 
             // txtTenBan
             // 
@@ -151,6 +151,7 @@
             this.txtTenBan.Name = "txtTenBan";
             this.txtTenBan.Size = new System.Drawing.Size(188, 27);
             this.txtTenBan.TabIndex = 2;
+            this.txtTenBan.TextChanged += new System.EventHandler(this.txtTenBan_TextChanged);
             // 
             // txtMaBan
             // 
@@ -158,6 +159,7 @@
             this.txtMaBan.Name = "txtMaBan";
             this.txtMaBan.Size = new System.Drawing.Size(188, 27);
             this.txtMaBan.TabIndex = 0;
+            this.txtMaBan.TextChanged += new System.EventHandler(this.txtMaBan_TextChanged);
             // 
             // lsbTenKhuVuc
             // 
@@ -240,6 +242,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // lbl_qlban
             // 

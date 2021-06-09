@@ -28,71 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbbban = new System.Windows.Forms.ComboBox();
-            this.lvhd = new System.Windows.Forms.ListView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_GoiMon));
+            this.btnGopBan = new System.Windows.Forms.Button();
+            this.cbbBan = new System.Windows.Forms.ComboBox();
+            this.lvHoaDon = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_LamMoi = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.gpb_TongTienThanhToan = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txttongtien = new System.Windows.Forms.TextBox();
             this.lbl_TongTienThanhToan = new System.Windows.Forms.Label();
-            this.btn_ThanhToan = new System.Windows.Forms.Button();
-            this.dtp_ThoiGian = new System.Windows.Forms.DateTimePicker();
-            this.fltable = new System.Windows.Forms.FlowLayoutPanel();
-            this.dgv_DSBan = new System.Windows.Forms.DataGridView();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.dtpThoiGian = new System.Windows.Forms.DateTimePicker();
+            this.flTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.dgvDanhSachBan = new System.Windows.Forms.DataGridView();
             this.MABAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENBAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAKV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_InHoaDon = new System.Windows.Forms.Button();
-            this.btn_GoiMon = new System.Windows.Forms.Button();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.btnGoiMon = new System.Windows.Forms.Button();
             this.gpb_TongTienThanhToan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBan)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnGopBan
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(605, 250);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 34);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "Gộp bàn";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGopBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGopBan.Location = new System.Drawing.Point(605, 250);
+            this.btnGopBan.Name = "btnGopBan";
+            this.btnGopBan.Size = new System.Drawing.Size(86, 34);
+            this.btnGopBan.TabIndex = 62;
+            this.btnGopBan.Text = "Gộp bàn";
+            this.btnGopBan.UseVisualStyleBackColor = true;
+            this.btnGopBan.Click += new System.EventHandler(this.btnGopBan_Click);
             // 
-            // cbbban
+            // cbbBan
             // 
-            this.cbbban.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbban.FormattingEnabled = true;
-            this.cbbban.Location = new System.Drawing.Point(605, 290);
-            this.cbbban.Name = "cbbban";
-            this.cbbban.Size = new System.Drawing.Size(86, 28);
-            this.cbbban.TabIndex = 63;
+            this.cbbBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbBan.FormattingEnabled = true;
+            this.cbbBan.Location = new System.Drawing.Point(605, 290);
+            this.cbbBan.Name = "cbbBan";
+            this.cbbBan.Size = new System.Drawing.Size(86, 28);
+            this.cbbBan.TabIndex = 63;
             // 
-            // lvhd
+            // lvHoaDon
             // 
-            this.lvhd.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.lvhd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvhd.GridLines = true;
-            this.lvhd.HideSelection = false;
-            this.lvhd.Location = new System.Drawing.Point(521, 324);
-            this.lvhd.Name = "lvhd";
-            this.lvhd.Size = new System.Drawing.Size(609, 160);
-            this.lvhd.TabIndex = 65;
-            this.lvhd.UseCompatibleStateImageBehavior = false;
-            this.lvhd.View = System.Windows.Forms.View.Details;
+            this.lvHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvHoaDon.GridLines = true;
+            this.lvHoaDon.HideSelection = false;
+            this.lvHoaDon.Location = new System.Drawing.Point(521, 324);
+            this.lvHoaDon.Name = "lvHoaDon";
+            this.lvHoaDon.Size = new System.Drawing.Size(609, 160);
+            this.lvHoaDon.TabIndex = 65;
+            this.lvHoaDon.UseCompatibleStateImageBehavior = false;
+            this.lvHoaDon.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -128,18 +132,19 @@
             this.columnHeader6.Text = "Đơn Vị";
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btn_LamMoi
+            // btnLamMoi
             // 
-            this.btn_LamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(1033, 199);
-            this.btn_LamMoi.Name = "btn_LamMoi";
-            this.btn_LamMoi.Size = new System.Drawing.Size(97, 35);
-            this.btn_LamMoi.TabIndex = 61;
-            this.btn_LamMoi.Text = "Làm Mới";
-            this.btn_LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_LamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.Location = new System.Drawing.Point(1033, 199);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(97, 35);
+            this.btnLamMoi.TabIndex = 61;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // gpb_TongTienThanhToan
             // 
@@ -183,52 +188,53 @@
             this.lbl_TongTienThanhToan.TabIndex = 3;
             this.lbl_TongTienThanhToan.Text = "Tổng tiền thanh toán :";
             // 
-            // btn_ThanhToan
+            // btnThanhToan
             // 
-            this.btn_ThanhToan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ThanhToan.Location = new System.Drawing.Point(691, 199);
-            this.btn_ThanhToan.Name = "btn_ThanhToan";
-            this.btn_ThanhToan.Size = new System.Drawing.Size(126, 36);
-            this.btn_ThanhToan.TabIndex = 59;
-            this.btn_ThanhToan.Text = "Thanh Toán";
-            this.btn_ThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_ThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThanhToan.Location = new System.Drawing.Point(691, 199);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(126, 36);
+            this.btnThanhToan.TabIndex = 59;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
-            // dtp_ThoiGian
+            // dtpThoiGian
             // 
-            this.dtp_ThoiGian.CustomFormat = "dd/MM/yyyy";
-            this.dtp_ThoiGian.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_ThoiGian.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_ThoiGian.Location = new System.Drawing.Point(952, 291);
-            this.dtp_ThoiGian.Name = "dtp_ThoiGian";
-            this.dtp_ThoiGian.Size = new System.Drawing.Size(178, 27);
-            this.dtp_ThoiGian.TabIndex = 64;
+            this.dtpThoiGian.CustomFormat = "dd/MM/yyyy";
+            this.dtpThoiGian.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpThoiGian.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThoiGian.Location = new System.Drawing.Point(952, 291);
+            this.dtpThoiGian.Name = "dtpThoiGian";
+            this.dtpThoiGian.Size = new System.Drawing.Size(178, 27);
+            this.dtpThoiGian.TabIndex = 64;
             // 
-            // fltable
+            // flTable
             // 
-            this.fltable.AutoScroll = true;
-            this.fltable.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.fltable.Location = new System.Drawing.Point(12, 12);
-            this.fltable.Name = "fltable";
-            this.fltable.Size = new System.Drawing.Size(503, 520);
-            this.fltable.TabIndex = 68;
+            this.flTable.AutoScroll = true;
+            this.flTable.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.flTable.Location = new System.Drawing.Point(12, 12);
+            this.flTable.Name = "flTable";
+            this.flTable.Size = new System.Drawing.Size(503, 520);
+            this.flTable.TabIndex = 68;
             // 
-            // dgv_DSBan
+            // dgvDanhSachBan
             // 
-            this.dgv_DSBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_DSBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DSBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDanhSachBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MABAN,
             this.TENBAN,
             this.MAKV,
             this.TRANGTHAI});
-            this.dgv_DSBan.Location = new System.Drawing.Point(521, 12);
-            this.dgv_DSBan.Name = "dgv_DSBan";
-            this.dgv_DSBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_DSBan.Size = new System.Drawing.Size(609, 167);
-            this.dgv_DSBan.TabIndex = 66;
+            this.dgvDanhSachBan.Location = new System.Drawing.Point(521, 12);
+            this.dgvDanhSachBan.Name = "dgvDanhSachBan";
+            this.dgvDanhSachBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDanhSachBan.Size = new System.Drawing.Size(609, 167);
+            this.dgvDanhSachBan.TabIndex = 66;
             // 
             // MABAN
             // 
@@ -254,54 +260,68 @@
             this.TRANGTHAI.HeaderText = "Trạng Thái";
             this.TRANGTHAI.Name = "TRANGTHAI";
             // 
-            // btn_InHoaDon
+            // btnInHoaDon
             // 
-            this.btn_InHoaDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_InHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_InHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_InHoaDon.Location = new System.Drawing.Point(873, 200);
-            this.btn_InHoaDon.Name = "btn_InHoaDon";
-            this.btn_InHoaDon.Size = new System.Drawing.Size(97, 35);
-            this.btn_InHoaDon.TabIndex = 60;
-            this.btn_InHoaDon.Text = "In hóa đơn";
-            this.btn_InHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_InHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInHoaDon.Location = new System.Drawing.Point(873, 200);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(97, 35);
+            this.btnInHoaDon.TabIndex = 60;
+            this.btnInHoaDon.Text = "In hóa đơn";
+            this.btnInHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
-            // btn_GoiMon
+            // printPreviewDialog
             // 
-            this.btn_GoiMon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_GoiMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GoiMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_GoiMon.Location = new System.Drawing.Point(521, 200);
-            this.btn_GoiMon.Name = "btn_GoiMon";
-            this.btn_GoiMon.Size = new System.Drawing.Size(86, 35);
-            this.btn_GoiMon.TabIndex = 58;
-            this.btn_GoiMon.Text = "Gọi món";
-            this.btn_GoiMon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_GoiMon.UseVisualStyleBackColor = true;
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog1";
+            this.printPreviewDialog.Visible = false;
+            // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // btnGoiMon
+            // 
+            this.btnGoiMon.Location = new System.Drawing.Point(551, 199);
+            this.btnGoiMon.Name = "btnGoiMon";
+            this.btnGoiMon.Size = new System.Drawing.Size(75, 23);
+            this.btnGoiMon.TabIndex = 69;
+            this.btnGoiMon.Text = "Gọi món";
+            this.btnGoiMon.UseVisualStyleBackColor = true;
+            this.btnGoiMon.Click += new System.EventHandler(this.btnGoiMon_Click);
             // 
             // Frm_GoiMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1139, 548);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.cbbban);
+            this.Controls.Add(this.btnGoiMon);
+            this.Controls.Add(this.btnGopBan);
+            this.Controls.Add(this.cbbBan);
             this.Controls.Add(this.lbl_TongTienThanhToan);
-            this.Controls.Add(this.lvhd);
-            this.Controls.Add(this.btn_LamMoi);
+            this.Controls.Add(this.lvHoaDon);
+            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.gpb_TongTienThanhToan);
-            this.Controls.Add(this.btn_ThanhToan);
-            this.Controls.Add(this.dtp_ThoiGian);
-            this.Controls.Add(this.fltable);
-            this.Controls.Add(this.dgv_DSBan);
-            this.Controls.Add(this.btn_InHoaDon);
-            this.Controls.Add(this.btn_GoiMon);
+            this.Controls.Add(this.btnThanhToan);
+            this.Controls.Add(this.dtpThoiGian);
+            this.Controls.Add(this.flTable);
+            this.Controls.Add(this.dgvDanhSachBan);
+            this.Controls.Add(this.btnInHoaDon);
             this.Name = "Frm_GoiMon";
             this.Text = "Frm_GoiMon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_GoiMon_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_GoiMon_Load);
             this.gpb_TongTienThanhToan.ResumeLayout(false);
             this.gpb_TongTienThanhToan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachBan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,29 +329,31 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbbban;
-        private System.Windows.Forms.ListView lvhd;
+        private System.Windows.Forms.Button btnGopBan;
+        private System.Windows.Forms.ComboBox cbbBan;
+        private System.Windows.Forms.ListView lvHoaDon;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Button btn_LamMoi;
+        private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.GroupBox gpb_TongTienThanhToan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txttongtien;
         private System.Windows.Forms.Label lbl_TongTienThanhToan;
-        private System.Windows.Forms.Button btn_ThanhToan;
-        private System.Windows.Forms.DateTimePicker dtp_ThoiGian;
-        private System.Windows.Forms.FlowLayoutPanel fltable;
-        private System.Windows.Forms.DataGridView dgv_DSBan;
+        private System.Windows.Forms.Button btnThanhToan;
+        private System.Windows.Forms.DateTimePicker dtpThoiGian;
+        private System.Windows.Forms.FlowLayoutPanel flTable;
+        private System.Windows.Forms.DataGridView dgvDanhSachBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn MABAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENBAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRANGTHAI;
-        private System.Windows.Forms.Button btn_InHoaDon;
-        private System.Windows.Forms.Button btn_GoiMon;
+        private System.Windows.Forms.Button btnInHoaDon;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.Button btnGoiMon;
     }
 }
