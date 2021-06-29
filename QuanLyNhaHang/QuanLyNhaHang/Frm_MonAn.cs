@@ -23,7 +23,7 @@ namespace QuanLyNhaHang
 
         private void loadcb()
         {
-            List<nhomMonAnDTO> group = nhomMonAnDAO.Instance.loadtennhom();//lấy danh sách nhóm món ăn từ database
+            List<nhomMonAnDTO> group = nhomMonAnDAO.Instance.loadTenNhom();//lấy danh sách nhóm món ăn từ database
             foreach (nhomMonAnDTO nhom in group)
             {
                 cbTenNhomMonAn.Items.Add(nhom.TenNhom.ToString());//add loại thực đơn vào combobox
@@ -196,7 +196,7 @@ namespace QuanLyNhaHang
         private void gvvDanhSachMonAn_SelectionChanged(object sender, EventArgs e)
         {
             txtMaMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[0].Value.ToString();
-            cbTenNhomMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[1].Value.ToString();
+            //cbTenNhomMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[1].Value.ToString();
             txtTenMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[2].Value.ToString();
             txtDonGiaTinh.Text = gvvDanhSachMonAn.CurrentRow.Cells[3].Value.ToString();
             txtDonViTinh.Text = gvvDanhSachMonAn.CurrentRow.Cells[4].Value.ToString();

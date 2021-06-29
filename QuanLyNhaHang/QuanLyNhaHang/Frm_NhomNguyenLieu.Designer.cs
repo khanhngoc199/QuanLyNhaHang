@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_NhomNguyenLieu));
             this.lblQLNhomNguyenLieu = new System.Windows.Forms.Label();
             this.lblDSNhomNguyenLieu = new System.Windows.Forms.Label();
             this.grb_QLNhomNguyenLieu = new System.Windows.Forms.GroupBox();
@@ -44,71 +44,32 @@
             this.MANNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.grb_QLNhomNguyenLieu.SuspendLayout();
             this.grb_dsloaithucdon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachNhomNguyenLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnXoa
-            // 
-            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(282, 195);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(77, 39);
-            this.btnXoa.TabIndex = 31;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(182, 195);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 39);
-            this.btnSua.TabIndex = 30;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(65, 195);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(90, 39);
-            this.btnThem.TabIndex = 29;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // lblQLNhomNguyenLieu
             // 
             this.lblQLNhomNguyenLieu.AutoSize = true;
-            this.lblQLNhomNguyenLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLNhomNguyenLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQLNhomNguyenLieu.Location = new System.Drawing.Point(112, 12);
             this.lblQLNhomNguyenLieu.Name = "lblQLNhomNguyenLieu";
-            this.lblQLNhomNguyenLieu.Size = new System.Drawing.Size(219, 20);
+            this.lblQLNhomNguyenLieu.Size = new System.Drawing.Size(243, 20);
             this.lblQLNhomNguyenLieu.TabIndex = 34;
             this.lblQLNhomNguyenLieu.Text = "Quản Lý Nhóm Nguyên Liệu";
             // 
             // lblDSNhomNguyenLieu
             // 
             this.lblDSNhomNguyenLieu.AutoSize = true;
-            this.lblDSNhomNguyenLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDSNhomNguyenLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDSNhomNguyenLieu.Location = new System.Drawing.Point(517, 12);
             this.lblDSNhomNguyenLieu.Name = "lblDSNhomNguyenLieu";
-            this.lblDSNhomNguyenLieu.Size = new System.Drawing.Size(239, 20);
+            this.lblDSNhomNguyenLieu.Size = new System.Drawing.Size(265, 20);
             this.lblDSNhomNguyenLieu.TabIndex = 32;
             this.lblDSNhomNguyenLieu.Text = "Danh Sách Nhóm Nguyên Liệu";
             // 
@@ -149,18 +110,18 @@
             this.lblTenNNL.AutoSize = true;
             this.lblTenNNL.Location = new System.Drawing.Point(16, 73);
             this.lblTenNNL.Name = "lblTenNNL";
-            this.lblTenNNL.Size = new System.Drawing.Size(175, 20);
+            this.lblTenNNL.Size = new System.Drawing.Size(177, 20);
             this.lblTenNNL.TabIndex = 4;
-            this.lblTenNNL.Text = "Tên Nhóm nguyên liệu";
+            this.lblTenNNL.Text = "Tên nhóm nguyên liệu:";
             // 
             // lbllblMaNNL
             // 
             this.lbllblMaNNL.AutoSize = true;
             this.lbllblMaNNL.Location = new System.Drawing.Point(16, 29);
             this.lbllblMaNNL.Name = "lbllblMaNNL";
-            this.lbllblMaNNL.Size = new System.Drawing.Size(170, 20);
+            this.lbllblMaNNL.Size = new System.Drawing.Size(172, 20);
             this.lbllblMaNNL.TabIndex = 3;
-            this.lbllblMaNNL.Text = "Mã Nhóm nguyên liệu";
+            this.lbllblMaNNL.Text = "Mã nhóm nguyên liệu:";
             // 
             // grb_dsloaithucdon
             // 
@@ -175,7 +136,20 @@
             // 
             // gvvDanhSachNhomNguyenLieu
             // 
+            this.gvvDanhSachNhomNguyenLieu.AllowUserToAddRows = false;
+            this.gvvDanhSachNhomNguyenLieu.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.gvvDanhSachNhomNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvvDanhSachNhomNguyenLieu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvvDanhSachNhomNguyenLieu.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvvDanhSachNhomNguyenLieu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvvDanhSachNhomNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvvDanhSachNhomNguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MANNL,
@@ -184,6 +158,8 @@
             this.gvvDanhSachNhomNguyenLieu.Location = new System.Drawing.Point(3, 17);
             this.gvvDanhSachNhomNguyenLieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gvvDanhSachNhomNguyenLieu.Name = "gvvDanhSachNhomNguyenLieu";
+            this.gvvDanhSachNhomNguyenLieu.ReadOnly = true;
+            this.gvvDanhSachNhomNguyenLieu.RowHeadersVisible = false;
             this.gvvDanhSachNhomNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvvDanhSachNhomNguyenLieu.Size = new System.Drawing.Size(522, 210);
             this.gvvDanhSachNhomNguyenLieu.TabIndex = 23;
@@ -194,16 +170,66 @@
             this.MANNL.DataPropertyName = "MANNL";
             this.MANNL.HeaderText = "Mã Nhóm Nguyên Liệu";
             this.MANNL.Name = "MANNL";
+            this.MANNL.ReadOnly = true;
             // 
             // TENNNL
             // 
             this.TENNNL.DataPropertyName = "TENNNL";
             this.TENNNL.HeaderText = "Tên Nhóm Nguyên Liệu";
             this.TENNNL.Name = "TENNNL";
+            this.TENNNL.ReadOnly = true;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = global::QuanLyNhaHang.Properties.Resources.delete_32;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(282, 195);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(102, 46);
+            this.btnXoa.TabIndex = 31;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = global::QuanLyNhaHang.Properties.Resources.edit_32;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(158, 195);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(102, 46);
+            this.btnSua.TabIndex = 30;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = global::QuanLyNhaHang.Properties.Resources.add32_32;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(32, 195);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(102, 46);
+            this.btnThem.TabIndex = 29;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // Frm_NhomNguyenLieu
             // 
@@ -217,8 +243,10 @@
             this.Controls.Add(this.lblQLNhomNguyenLieu);
             this.Controls.Add(this.lblDSNhomNguyenLieu);
             this.Controls.Add(this.grb_QLNhomNguyenLieu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_NhomNguyenLieu";
-            this.Text = "Frm_NhomNguyenLieu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nhóm nguyên liệu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_NhomNguyenLieu_FormClosing);
             this.Load += new System.EventHandler(this.Frm_NhomNguyenLieu_Load);
             this.grb_QLNhomNguyenLieu.ResumeLayout(false);

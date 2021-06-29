@@ -15,8 +15,9 @@ namespace DTO
         int soLuong;
         float donGia;
         string donViTinh;
+        float tongTien;
         private menuDTO() { }
-        public menuDTO(int maHD, string tenBan, string tenMonAn, int soLuong, float donGia, string donViTinh)
+        public menuDTO(int maHD, string tenBan, string tenMonAn, int soLuong, float donGia, string donViTinh, float tongTien=0)
         {
             this.maHD = maHD;
             this.tenBan = tenBan;
@@ -24,6 +25,7 @@ namespace DTO
             this.soLuong = soLuong;
             this.donGia = donGia;
             this.donViTinh = donViTinh;
+            this.tongTien = tongTien;
         }
         public menuDTO(DataRow row)
         {
@@ -31,8 +33,9 @@ namespace DTO
             this.tenBan = row["TENBAN"].ToString();    
             this.tenMonAn = row["TENMONAN"].ToString();
             this.soLuong = int.Parse(row["SOLUONG"].ToString());
-            this.donGia = int.Parse(row["DONGIA"].ToString());
+            this.donGia = (float)Convert.ToDouble(row["DONGIA"].ToString());
             this.donViTinh = row["DONVITINH"].ToString();
+            this.tongTien = (float)Convert.ToDouble(row["TONGTIEN"].ToString());
         }
         public int MaHD { get { return maHD; } set { this.maHD = value; } }
         public string TenBan { get { return tenBan; } set { this.tenBan = value; } }
@@ -40,5 +43,6 @@ namespace DTO
         public float DonGia { get { return donGia; } set { this.donGia = value; } }
         public string DonViTinh { get { return donViTinh; } set { this.donViTinh = value; } }
         public int SoLuong { get { return soLuong; } set { this.soLuong = value; } }
+        public float TongTien { get { return tongTien; } set { this.tongTien = value; } }
     }
 }

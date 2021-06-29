@@ -28,36 +28,17 @@ namespace DAO
             }
         }
         private menuDAO() { }
-        public List<menuDTO> getmenu(int maBan)
+        public List<menuDTO> getListMenuByTable(int id)
         {
-            List<menuDTO> list = new List<menuDTO>();
-            DataTable tb = Database.Instrance.ExecuteQuery("EXEC USP_getMenu @maban ", new object[] { maBan });
-            foreach (DataRow row in tb.Rows)
+            List<menuDTO> listMenu = new List<menuDTO>();
+            string query= "SELECT f.MAMA, bi.SOLUONG, f.DONGIA, f.DONGIA* bi.SOLUONG AS TONGTIEN FROM dbo.CHITIETHOADONXUAT AS bi, dbo.HOADONXUAT AS b, dbo.MONAN AS f WHERE bi.MAHDX = b.MABAN AND bi.MAMA = f.MAMA AND b.TRANGTHAI = 0 AND b.MABAN = " + id;
+            DataTable data = Database.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
             {
-                menuDTO menu = new menuDTO(row);
-                list.Add(menu);
+                menuDTO menu = new menuDTO(item);
+                listMenu.Add(menu);
             }
-            return list;
-        }
-        public bool addbaocao(string ban, DateTime ngay, float tong)
-        {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertBaoCao @tenban , @ngay , @tongtien ", new object[] { ban, ngay, tong });
-            return n > 0;
-        }
-        public List<baoCaoDTO> getbaocao()
-        {
-            List<baoCaoDTO> list = new List<baoCaoDTO>();
-            DataTable tb = Database.Instrance.ExecuteQuery("SELECT * FROM dbo.BAOCAO ");
-            foreach (DataRow row in tb.Rows)
-            {
-                baoCaoDTO menu = new baoCaoDTO(row);
-                list.Add(menu);
-            }
-            return list;
-        }
-        public DataTable getl()
-        {
-            return Database.Instrance.ExecuteQuery("SELECT * FROM dbo.BAOCAO");
+            return listMenu;
         }
 
     }

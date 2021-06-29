@@ -169,38 +169,23 @@ namespace QuanLyNhaHang
         private void tsmiThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void tsmiThuChi_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Frm_Login.key == 1)
-            {
-                Frm_BaoCaoDoanhThuNgay hdx = new Frm_BaoCaoDoanhThuNgay();
-                hdx.Show();
-            }
-            else
-            {
+        
 
-                MessageBox.Show("Bạn phải đăng nhập dưới quyền admin");
-            }
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_DoiMatkhau f = new Frm_DoiMatkhau();
+            f.Show();
         }
 
-        private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Frm_Login.key == 1)
-            {
-                Frm_HoaDonNhap hdn = new Frm_HoaDonNhap();
-                hdn.Show();
-            }
-            else
-            {
-                MessageBox.Show("Bạn hãy đăng nhập dưới quyền admin");
-            }
+            Frm_Login.key = 0;
+            Frm_Login f = new Frm_Login();
+            f.Show();
+            this.Hide();
         }
     }
 }

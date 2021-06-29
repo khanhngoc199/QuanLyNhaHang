@@ -29,16 +29,16 @@ namespace DAO
         private khuVucDAO() { }
         public DataTable getKV()
         {
-            return Database.Instrance.ExecuteQuery("SELECT * FROM DBO.KHUVUC");
+            return Database.Instance.ExecuteQuery("SELECT * FROM DBO.KHUVUC");
         }
         public bool insertkv(int maKV, string tenKV, string trangThai)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertKhuVuc @makv , @tenkv , @trangthai ", new object[] { maKV, tenKV, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertKhuVuc @makv , @tenkv , @trangthai ", new object[] { maKV, tenKV, trangThai });
             return n > 0;
         }
         public bool updatetkv(int maKV, string tenKV, string trangThai)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateKhuVuc @makv , @tenkv , @trangthai ", new object[] { maKV, tenKV, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateKhuVuc @makv , @tenkv , @trangthai ", new object[] { maKV, tenKV, trangThai });
             return n > 0;
         }
     }

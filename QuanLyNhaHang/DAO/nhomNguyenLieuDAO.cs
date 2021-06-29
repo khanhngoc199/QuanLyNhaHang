@@ -30,27 +30,27 @@ namespace DAO
         private nhomNguyenLieuDAO() { }
         public DataTable getnhomnl()
         {
-            return Database.Instrance.ExecuteQuery("SELECT * FROM dbo.NHOMNGUYENLIEU");
+            return Database.Instance.ExecuteQuery("SELECT * FROM dbo.NHOMNGUYENLIEU");
         }
         public bool insertnhomnl(int maNNL, string tenNNL)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
             return n > 0;
         }
         public bool updatennl(int maNNL, string tenNNL)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
             return n > 0;
         }
         public bool delete(int maNNL)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_deleteNhomNL @mannl ", new object[] { maNNL });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteNhomNL @mannl ", new object[] { maNNL });
             return n > 1;
 
         }
         public List<nhomNguyenLieuDTO> getlisnhom()
         {
-            DataTable tb = Database.Instrance.ExecuteQuery("SELECT * FROM dbo.NHOMNGUYENLIEU");
+            DataTable tb = Database.Instance.ExecuteQuery("SELECT * FROM dbo.NHOMNGUYENLIEU");
             List<nhomNguyenLieuDTO> list = new List<nhomNguyenLieuDTO>();
             foreach (DataRow row in tb.Rows)
             {

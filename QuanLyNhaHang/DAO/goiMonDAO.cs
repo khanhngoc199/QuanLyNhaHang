@@ -28,22 +28,22 @@ namespace DAO
         private goiMonDAO() { }
         public bool updatesttban(int maBan)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateSTTBan @maban ", new object[] { maBan });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateSTTBan @maban ", new object[] { maBan });
             return n > 0;
         }
         public bool insertHD(int MAHDX, int MABAN, int MANV, DateTime THOIGIANVAO)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertHD @mahd , @maban , @manhanvien , @thoigianvao  ", new object[] { MAHDX, MABAN, MANV, THOIGIANVAO });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertHD @mahd , @maban , @manhanvien , @thoigianvao  ", new object[] { MAHDX, MABAN, MANV, THOIGIANVAO });
             return n > 0;
         }
         public bool insertCTHD(int MACTHDX, int MAHDX, int MAMA, float SOLUONG)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertHDX @macthd , @mahd , @maman , @soluong ", new object[] { MACTHDX, MAHDX, MAMA, SOLUONG });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertHDX @macthd , @mahd , @maman , @soluong ", new object[] { MACTHDX, MAHDX, MAMA, SOLUONG });
             return n > 0;
         }
         public bool gopban(int mb1, int mb2)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_gopBanAn @idban1 , @idban2 ", new object[] { mb1, mb2 });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_gopBanAn @idban1 , @idban2 ", new object[] { mb1, mb2 });
             return n > 0;
         }
     }

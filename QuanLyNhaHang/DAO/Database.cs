@@ -10,20 +10,20 @@ namespace DAO
 {
     public class Database
     {
-        private static Database instrance;
+        private static Database instance;
 
-        public static Database Instrance
+        public static Database Instance
         {
             get
             {
-                if (instrance == null)
-                    instrance = new Database();
-                return instrance;
+                if (instance == null)
+                    instance = new Database();
+                return instance;
             }
 
             private set
             {
-                Database.instrance = value;
+                Database.instance = value;
             }
         }
 
@@ -31,7 +31,7 @@ namespace DAO
 
         private Database() { }
         //chuỗi kết nối sql
-        private string ConnectionSTR = @"Data Source=DESKTOP-8GCG3PG ;Initial Catalog=QLNH;Integrated Security=True";
+        private string ConnectionSTR = @"Data Source=DESKTOP-8GCG3PG ;Initial Catalog=QLNHang;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -132,5 +132,33 @@ namespace DAO
             return ob;// trả về số dòng đc thực thi
             //sd:insert, update, delete
         }
+        public object ExecuteSalarToDouble(string query, object[] parameter = null)
+        {
+            object dt = 0;
+            using (SqlConnection connect = new SqlConnection(ConnectionSTR))
+            {
+                connect.Open();
+                SqlCommand comd = new SqlCommand(query, connect);
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            comd.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+
+                    }
+                }
+                dt = comd.ExecuteScalar().ToString();
+                connect.Close();
+                return dt;
+            }
+        }
     }
+
 }

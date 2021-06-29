@@ -58,5 +58,30 @@ namespace DTO
                 }
             }
         }
+
+        private void Frm_DoiMatkhau_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnDongY;
+        }
+
+        private void btnDongY_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnDongY.PerformClick();
+        }
+
+        private void txtMatKhauMoi_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTenDangNhap.Text != string.Empty)
+            {
+                if (txtMatKhauCu.Text != string.Empty)
+                {
+                    if (txtMatKhauMoi.Text != string.Empty)
+                    {
+                        btnDongY.Enabled = true;
+                    }
+                }
+            }
+        }
     }
 }

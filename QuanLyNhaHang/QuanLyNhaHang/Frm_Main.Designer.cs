@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiQuanLy = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiQuanLy,
             this.tsmiKhuVuc,
@@ -205,21 +207,18 @@
             this.tsmiThuChi.Size = new System.Drawing.Size(58, 51);
             this.tsmiThuChi.Text = "Thu chi";
             this.tsmiThuChi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsmiThuChi.Click += new System.EventHandler(this.tsmiThuChi_Click);
             // 
             // báoCáoDoanhThuToolStripMenuItem
             // 
             this.báoCáoDoanhThuToolStripMenuItem.Name = "báoCáoDoanhThuToolStripMenuItem";
-            this.báoCáoDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.báoCáoDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.báoCáoDoanhThuToolStripMenuItem.Text = "Báo cáo doanh thu";
-            this.báoCáoDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.báoCáoDoanhThuToolStripMenuItem_Click);
             // 
             // hóaĐơnNhậpToolStripMenuItem
             // 
             this.hóaĐơnNhậpToolStripMenuItem.Name = "hóaĐơnNhậpToolStripMenuItem";
-            this.hóaĐơnNhậpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hóaĐơnNhậpToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.hóaĐơnNhậpToolStripMenuItem.Text = "Hóa đơn nhập";
-            this.hóaĐơnNhậpToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnNhậpToolStripMenuItem_Click);
             // 
             // tsmiHeThong
             // 
@@ -239,12 +238,14 @@
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // saoLưuToolStripMenuItem
             // 
@@ -275,9 +276,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 354);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(646, 394);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "Frm_Main";

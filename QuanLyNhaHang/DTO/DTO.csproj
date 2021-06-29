@@ -56,8 +56,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="hoaDonNhapDTO.cs" />
-    <Compile Include="hoaDonXuatDTO.cs" />
+    <Compile Include="hoaDonDTO.cs" />
     <Compile Include="menuDTO.cs" />
     <Compile Include="monAnDTO.cs" />
     <Compile Include="nguyenLieuDTO.cs" />

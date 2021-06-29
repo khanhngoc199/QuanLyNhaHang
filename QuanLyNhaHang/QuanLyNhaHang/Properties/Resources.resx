@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="add32_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add32_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="exit_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="goimon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\goimon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="help_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\help_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hethong_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hethong_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,16 +139,37 @@
   <data name="icons8_manager_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_manager_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="khuvuc_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\khuvuc_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manager_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manager_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="thuchi_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thuchi_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="goimon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goimon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="khuvuc_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\khuvuc_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancel_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

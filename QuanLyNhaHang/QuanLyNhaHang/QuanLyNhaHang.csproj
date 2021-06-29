@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,29 +59,11 @@
     <Compile Include="Frm_Ban.Designer.cs">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_BaoCaoDoanhThuNgay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_BaoCaoDoanhThuNgay.Designer.cs">
-      <DependentUpon>Frm_BaoCaoDoanhThuNgay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_BaoCaoNguyenLieuTon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_BaoCaoNguyenLieuTon.Designer.cs">
-      <DependentUpon>Frm_BaoCaoNguyenLieuTon.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_BoPhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_BoPhan.Designer.cs">
       <DependentUpon>Frm_BoPhan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_ChonMon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_ChonMon.Designer.cs">
-      <DependentUpon>Frm_ChonMon.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_DoiMatkhau.cs">
       <SubType>Form</SubType>
@@ -87,18 +76,6 @@
     </Compile>
     <Compile Include="Frm_GoiMon.Designer.cs">
       <DependentUpon>Frm_GoiMon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_HoaDonNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_HoaDonNhap.Designer.cs">
-      <DependentUpon>Frm_HoaDonNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_HoaDonXuat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_HoaDonXuat.Designer.cs">
-      <DependentUpon>Frm_HoaDonXuat.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_KhuVuc.cs">
       <SubType>Form</SubType>
@@ -148,18 +125,6 @@
     <Compile Include="Frm_NhomNguyenLieu.Designer.cs">
       <DependentUpon>Frm_NhomNguyenLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_PhanQuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_PhanQuyen.Designer.cs">
-      <DependentUpon>Frm_PhanQuyen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_ThemMonAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_ThemMonAn.Designer.cs">
-      <DependentUpon>Frm_ThemMonAn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,29 +136,14 @@
     <EmbeddedResource Include="Frm_Ban.resx">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_BaoCaoDoanhThuNgay.resx">
-      <DependentUpon>Frm_BaoCaoDoanhThuNgay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_BaoCaoNguyenLieuTon.resx">
-      <DependentUpon>Frm_BaoCaoNguyenLieuTon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_BoPhan.resx">
       <DependentUpon>Frm_BoPhan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_ChonMon.resx">
-      <DependentUpon>Frm_ChonMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_DoiMatkhau.resx">
       <DependentUpon>Frm_DoiMatkhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GoiMon.resx">
       <DependentUpon>Frm_GoiMon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_HoaDonNhap.resx">
-      <DependentUpon>Frm_HoaDonNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_HoaDonXuat.resx">
-      <DependentUpon>Frm_HoaDonXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_KhuVuc.resx">
       <DependentUpon>Frm_KhuVuc.cs</DependentUpon>
@@ -218,12 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_NhomNguyenLieu.resx">
       <DependentUpon>Frm_NhomNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_PhanQuyen.resx">
-      <DependentUpon>Frm_PhanQuyen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_ThemMonAn.resx">
-      <DependentUpon>Frm_ThemMonAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_User.resx">
       <DependentUpon>Frm_User.cs</DependentUpon>
@@ -287,6 +231,33 @@
       <Project>{1de03aed-ccd2-4121-9263-d179a25f76b9}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add32_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

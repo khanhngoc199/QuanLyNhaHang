@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DoiMatkhau));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
@@ -41,10 +42,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(119, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 24);
+            this.label4.Size = new System.Drawing.Size(159, 23);
             this.label4.TabIndex = 15;
             this.label4.Text = "ĐỔI MẬT KHẨU";
             // 
@@ -65,6 +66,7 @@
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Size = new System.Drawing.Size(207, 27);
             this.txtMatKhauMoi.TabIndex = 11;
+            this.txtMatKhauMoi.TextChanged += new System.EventHandler(this.txtMatKhauMoi_TextChanged);
             // 
             // txtMatKhauCu
             // 
@@ -106,13 +108,17 @@
             // 
             this.btnDongY.Enabled = false;
             this.btnDongY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDongY.Image = global::QuanLyNhaHang.Properties.Resources.ok_32;
+            this.btnDongY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDongY.Location = new System.Drawing.Point(233, 188);
             this.btnDongY.Name = "btnDongY";
-            this.btnDongY.Size = new System.Drawing.Size(114, 36);
+            this.btnDongY.Size = new System.Drawing.Size(102, 46);
             this.btnDongY.TabIndex = 13;
             this.btnDongY.Text = "Đồng ý";
+            this.btnDongY.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDongY.UseVisualStyleBackColor = true;
             this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click);
+            this.btnDongY.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDongY_KeyDown);
             // 
             // Frm_DoiMatkhau
             // 
@@ -127,8 +133,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDongY);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_DoiMatkhau";
-            this.Text = "Frm_DoiMatkhau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đổi mật khẩu";
+            this.Load += new System.EventHandler(this.Frm_DoiMatkhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

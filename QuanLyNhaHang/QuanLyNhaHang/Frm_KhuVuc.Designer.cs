@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_KhuVuc));
             this.lbl_qlkv = new System.Windows.Forms.Label();
             this.lbl_dskv = new System.Windows.Forms.Label();
             this.gbDanhSachKhuVuc = new System.Windows.Forms.GroupBox();
@@ -46,39 +47,13 @@
             this.lbl_tenkv = new System.Windows.Forms.Label();
             this.lbl_makv = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.gbDanhSachKhuVuc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachKhuVuc)).BeginInit();
             this.gb_khuvuc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(205, 239);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(90, 33);
-            this.btnSua.TabIndex = 24;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(81, 239);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(90, 33);
-            this.btnThem.TabIndex = 23;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lbl_qlkv
             // 
@@ -113,7 +88,20 @@
             // 
             // gvvDanhSachKhuVuc
             // 
+            this.gvvDanhSachKhuVuc.AllowUserToAddRows = false;
+            this.gvvDanhSachKhuVuc.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.gvvDanhSachKhuVuc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvvDanhSachKhuVuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvvDanhSachKhuVuc.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvvDanhSachKhuVuc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvvDanhSachKhuVuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvvDanhSachKhuVuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MAKV,
@@ -123,6 +111,8 @@
             this.gvvDanhSachKhuVuc.Location = new System.Drawing.Point(3, 17);
             this.gvvDanhSachKhuVuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gvvDanhSachKhuVuc.Name = "gvvDanhSachKhuVuc";
+            this.gvvDanhSachKhuVuc.ReadOnly = true;
+            this.gvvDanhSachKhuVuc.RowHeadersVisible = false;
             this.gvvDanhSachKhuVuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvvDanhSachKhuVuc.Size = new System.Drawing.Size(469, 209);
             this.gvvDanhSachKhuVuc.TabIndex = 23;
@@ -133,18 +123,21 @@
             this.MAKV.DataPropertyName = "MAKV";
             this.MAKV.HeaderText = "Mã Khu Vực";
             this.MAKV.Name = "MAKV";
+            this.MAKV.ReadOnly = true;
             // 
             // TENKV
             // 
             this.TENKV.DataPropertyName = "TENKV";
             this.TENKV.HeaderText = "Tên Khu Vực";
             this.TENKV.Name = "TENKV";
+            this.TENKV.ReadOnly = true;
             // 
             // TRANGTHAI
             // 
             this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
             this.TRANGTHAI.HeaderText = "Trạng Thái";
             this.TRANGTHAI.Name = "TRANGTHAI";
+            this.TRANGTHAI.ReadOnly = true;
             // 
             // gb_khuvuc
             // 
@@ -165,23 +158,23 @@
             // 
             // lsbTrangThai
             // 
-            this.lsbTrangThai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbTrangThai.FormattingEnabled = true;
-            this.lsbTrangThai.ItemHeight = 19;
+            this.lsbTrangThai.ItemHeight = 20;
             this.lsbTrangThai.Items.AddRange(new object[] {
             "Hoạt động",
             "Tạm nghỉ"});
             this.lsbTrangThai.Location = new System.Drawing.Point(132, 110);
             this.lsbTrangThai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsbTrangThai.Name = "lsbTrangThai";
-            this.lsbTrangThai.Size = new System.Drawing.Size(180, 23);
+            this.lsbTrangThai.Size = new System.Drawing.Size(180, 24);
             this.lsbTrangThai.TabIndex = 2;
             // 
             // lsbTenKhuVuc
             // 
-            this.lsbTenKhuVuc.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbTenKhuVuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbTenKhuVuc.FormattingEnabled = true;
-            this.lsbTenKhuVuc.ItemHeight = 19;
+            this.lsbTenKhuVuc.ItemHeight = 20;
             this.lsbTenKhuVuc.Items.AddRange(new object[] {
             "Trong nhà",
             "Sân vườn",
@@ -191,11 +184,12 @@
             this.lsbTenKhuVuc.Location = new System.Drawing.Point(132, 68);
             this.lsbTenKhuVuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsbTenKhuVuc.Name = "lsbTenKhuVuc";
-            this.lsbTenKhuVuc.Size = new System.Drawing.Size(180, 23);
+            this.lsbTenKhuVuc.Size = new System.Drawing.Size(180, 24);
             this.lsbTenKhuVuc.TabIndex = 1;
             // 
             // txtMaKhuVuc
             // 
+            this.txtMaKhuVuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKhuVuc.Location = new System.Drawing.Point(132, 23);
             this.txtMaKhuVuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaKhuVuc.Name = "txtMaKhuVuc";
@@ -206,6 +200,7 @@
             // lbl_trangthai
             // 
             this.lbl_trangthai.AutoSize = true;
+            this.lbl_trangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_trangthai.Location = new System.Drawing.Point(6, 109);
             this.lbl_trangthai.Name = "lbl_trangthai";
             this.lbl_trangthai.Size = new System.Drawing.Size(89, 20);
@@ -215,24 +210,58 @@
             // lbl_tenkv
             // 
             this.lbl_tenkv.AutoSize = true;
+            this.lbl_tenkv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_tenkv.Location = new System.Drawing.Point(6, 67);
             this.lbl_tenkv.Name = "lbl_tenkv";
-            this.lbl_tenkv.Size = new System.Drawing.Size(110, 20);
+            this.lbl_tenkv.Size = new System.Drawing.Size(104, 20);
             this.lbl_tenkv.TabIndex = 2;
-            this.lbl_tenkv.Text = "Tên Khu Vực:";
+            this.lbl_tenkv.Text = "Tên khu vực:";
             // 
             // lbl_makv
             // 
             this.lbl_makv.AutoSize = true;
+            this.lbl_makv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_makv.Location = new System.Drawing.Point(6, 26);
             this.lbl_makv.Name = "lbl_makv";
-            this.lbl_makv.Size = new System.Drawing.Size(105, 20);
+            this.lbl_makv.Size = new System.Drawing.Size(99, 20);
             this.lbl_makv.TabIndex = 0;
-            this.lbl_makv.Text = "Mã Khu Vực:";
+            this.lbl_makv.Text = "Mã khu vực:";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = global::QuanLyNhaHang.Properties.Resources.edit_32;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(205, 231);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(102, 46);
+            this.btnSua.TabIndex = 24;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = global::QuanLyNhaHang.Properties.Resources.add32_32;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(75, 231);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(102, 46);
+            this.btnThem.TabIndex = 23;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // Frm_KhuVuc
             // 
@@ -245,8 +274,10 @@
             this.Controls.Add(this.lbl_dskv);
             this.Controls.Add(this.gbDanhSachKhuVuc);
             this.Controls.Add(this.gb_khuvuc);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_KhuVuc";
-            this.Text = "Frm_KhuVuc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Khu vực";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_KhuVuc_FormClosing);
             this.Load += new System.EventHandler(this.Frm_KhuVuc_Load);
             this.gbDanhSachKhuVuc.ResumeLayout(false);

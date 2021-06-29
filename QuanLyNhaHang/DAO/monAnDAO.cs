@@ -30,27 +30,27 @@ namespace DAO
         private monAnDAO() { }
         public DataTable getNhommonan()
         {
-            return Database.Instrance.ExecuteQuery("SELECT * FROM DBO.MONAN");
+            return Database.Instance.ExecuteQuery("SELECT * FROM DBO.MONAN");
         }
         public bool insertmonan(string tenNhom, int maMon, string tenMonAn, float donGia, string donViTinh, string trangThai)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertMonAn @tennhommonan , @mamonan , @tenmonan , @dongia , @donvitinh , @trangthai ", new object[] { tenNhom, maMon, tenMonAn, donGia, donViTinh, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertMonAn @tennhommonan , @mamonan , @tenmonan , @dongia , @donvitinh , @trangthai ", new object[] { tenNhom, maMon, tenMonAn, donGia, donViTinh, trangThai });
             return n > 0;
         }
         public bool updatetmonan(string tenNhom, int maMon, string tenMonAn, float donGia, string donViTinh, string trangThai)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateMonAn @tennhommonan , @mamonan , @tenmonan , @dongia , @donvitinh , @trangthai ", new object[] { tenNhom, maMon, tenMonAn, donGia, donViTinh, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateMonAn @tennhommonan , @mamonan , @tenmonan , @dongia , @donvitinh , @trangthai ", new object[] { tenNhom, maMon, tenMonAn, donGia, donViTinh, trangThai });
             return n > 0;
         }
         public bool deletemonan(int maMon)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_deleteMonAn @mamon ", new object[] { maMon });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteMonAn @mamon ", new object[] { maMon });
             return n > 0;
         }
-        public List<monAnDTO> getlisbyID(int id)
+        public List<monAnDTO> getLisByID(int id)
         {
             List<monAnDTO> list = new List<monAnDTO>();
-            DataTable td = Database.Instrance.ExecuteQuery("EXEC USP_getListFood @id ", new object[] { id });
+            DataTable td = Database.Instance.ExecuteQuery("EXEC USP_getListFood @id ", new object[] { id });
             foreach (DataRow row in td.Rows)
             {
                 monAnDTO mon = new monAnDTO(row);
@@ -61,7 +61,19 @@ namespace DAO
         public int getmamon(string ten)
         {
 
-            return (int)Database.Instrance.ExecuteSalar("EXEC USP_getMaMon @ten ", new object[] { ten });
+            return (int)Database.Instance.ExecuteSalar("EXEC USP_getMaMon @ten ", new object[] { ten });
+        }
+        public monAnDTO getFoodByName(string name)
+        {
+            monAnDTO monan = null;         
+            string query = string.Format("SELECT a.MAMA ,a.TENMA as 'Name' , B.TENNMA as 'TENNMA', A.DONGIA as 'Gia' FROM DBO.MONAN a, DBO.NHOMMONAN B where a.TENMA like  N'{0}' and a.MAMA=b.MANMA",name);
+            DataTable data = Database.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                monan = new monAnDTO(item);
+                return monan;
+            }
+            return monan;
         }
     }
 }

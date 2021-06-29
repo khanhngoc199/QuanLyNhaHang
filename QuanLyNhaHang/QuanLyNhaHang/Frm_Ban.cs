@@ -160,7 +160,7 @@ namespace QuanLyNhaHang
         {
             txtMaBan.Text = dgvDanhSachBan.CurrentRow.Cells[0].Value.ToString();
             lsbTenKhuVuc.Text = dgvDanhSachBan.CurrentRow.Cells[1].Value.ToString();
-            txtTenBan.Text = dgvDanhSachBan.CurrentRow.Cells[2].Value.ToString();
+            //txtTenBan.Text = dgvDanhSachBan.CurrentRow.Cells[2].Value.ToString();
             lsbTrangThai.Text = dgvDanhSachBan.CurrentRow.Cells[3].Value.ToString();
         }
 

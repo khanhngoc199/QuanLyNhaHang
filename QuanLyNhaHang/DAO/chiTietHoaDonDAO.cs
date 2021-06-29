@@ -28,16 +28,33 @@ namespace DAO
             }
         }
         private chiTietHoaDonDAO() { }
-        public List<chiTietHoaDonDTO> getlistbyhdid(int mahd)//lấy danh sách chi tiết hóa đơn theo mã hóa đơn
+        public void DeleteBillInfoByFoodID(int idfood)
         {
-            List<chiTietHoaDonDTO> list = new List<chiTietHoaDonDTO>();
-            DataTable tb = Database.Instrance.ExecuteQuery("EXEC USP_getCTHD @mahd ", new object[] { mahd });
-            foreach (DataRow row in tb.Rows)
+            Database.Instance.ExecuteQuery("DELETE DBO.CHITIETHOADONXUAT WHERE MAMA =" + idfood);
+        }
+
+        public List<chiTietHoaDonDTO> GetListBillInfo(int id)
+        {
+            List<chiTietHoaDonDTO> listBillInfo = new List<chiTietHoaDonDTO>();
+            DataTable data = Database.Instance.ExecuteQuery("select * from DBO.CHITIETHOADONXUAT where MAHDX = " + id);
+            foreach (DataRow item in data.Rows)
             {
-                chiTietHoaDonDTO hd = new chiTietHoaDonDTO(row);
-                list.Add(hd);
+                chiTietHoaDonDTO info = new chiTietHoaDonDTO(item);
+                listBillInfo.Add(info);
             }
-            return list;
+
+            
+
+            return listBillInfo;
+        }
+
+        public void InsertBillInfo(int idBill, int idFood, int count)
+        {
+            Database.Instance.ExecuteNonQuery("exec USP_InsertBillInfo @MAHDX , @MAMA , @SOLUONG", new object[] { idBill, idFood, count });
+        }
+        public void DeleteBillInforByFoofID(int id)
+        {
+            Database.Instance.ExecuteNonQuery("delete DBO.CHITIETHOADONXUAT where MAMA=" + id);
         }
     }
 }

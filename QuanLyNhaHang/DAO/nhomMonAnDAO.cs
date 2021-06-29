@@ -30,33 +30,33 @@ namespace DAO
         private nhomMonAnDAO() { }
         public DataTable getNhommonan()
         {
-            return Database.Instrance.ExecuteQuery("SELECT * FROM DBO.NHOMMONAN");
+            return Database.Instance.ExecuteQuery("SELECT * FROM DBO.NHOMMONAN");
         }
         public bool insertnhommonan(int manhom, string tennhom)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertMaMA @manma , @tennma ", new object[] { manhom, tennhom });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertMaMA @manma , @tennma ", new object[] { manhom, tennhom });
             return n > 0;
         }
         public bool updatenhommonan(int manhom, string tennhom)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateMaMA @manma , @tennma ", new object[] { manhom, tennhom });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateMaMA @manma , @tennma ", new object[] { manhom, tennhom });
             return n > 0;
         }
         public bool deletenhommonan(int manhom)
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_deleteMaMA @manma  ", new object[] { manhom });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteMaMA @manma  ", new object[] { manhom });
             return n > 0;
         }
-        public List<nhomMonAnDTO> loadtennhom()
+        public List<nhomMonAnDTO> loadTenNhom()
         {
-            List<nhomMonAnDTO> group = new List<nhomMonAnDTO>();
-            DataTable table = Database.Instrance.ExecuteQuery("SELECT * FROM dbo.NHOMMONAN");
+            List<nhomMonAnDTO> list = new List<nhomMonAnDTO>();
+            DataTable table = Database.Instance.ExecuteQuery("SELECT * FROM dbo.NHOMMONAN");
             foreach (DataRow row in table.Rows)
             {
                 nhomMonAnDTO nhom = new nhomMonAnDTO(row);
-                group.Add(nhom);
+                list.Add(nhom);
             }
-            return group;
+            return list;
         }
     }
 }

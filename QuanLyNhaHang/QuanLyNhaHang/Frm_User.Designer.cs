@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_User));
             this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
@@ -108,11 +109,15 @@
             // 
             // btnDongY
             // 
-            this.btnDongY.Location = new System.Drawing.Point(307, 182);
+            this.btnDongY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDongY.Image = global::QuanLyNhaHang.Properties.Resources.ok_32;
+            this.btnDongY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDongY.Location = new System.Drawing.Point(307, 171);
             this.btnDongY.Name = "btnDongY";
-            this.btnDongY.Size = new System.Drawing.Size(75, 23);
+            this.btnDongY.Size = new System.Drawing.Size(102, 46);
             this.btnDongY.TabIndex = 20;
             this.btnDongY.Text = "Đồng ý";
+            this.btnDongY.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDongY.UseVisualStyleBackColor = true;
             this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click_1);
             // 
@@ -128,8 +133,10 @@
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.lbl_matkhau);
             this.Controls.Add(this.lbl_tendn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_User";
-            this.Text = "Frm_User";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tài khoản";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_User_FormClosing);
             this.Load += new System.EventHandler(this.Frm_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

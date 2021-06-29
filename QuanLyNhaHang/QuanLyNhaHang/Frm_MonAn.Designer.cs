@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MonAn));
             this.gb_qlthucdon = new System.Windows.Forms.GroupBox();
             this.cbTenNhomMonAn = new System.Windows.Forms.ComboBox();
             this.txtDonGiaTinh = new System.Windows.Forms.TextBox();
@@ -44,6 +47,7 @@
             this.grbDanhSachMonAn = new System.Windows.Forms.GroupBox();
             this.gvvDanhSachMonAn = new System.Windows.Forms.DataGridView();
             this.MAMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,54 +136,54 @@
             this.lbl_trangthai.AutoSize = true;
             this.lbl_trangthai.Location = new System.Drawing.Point(6, 201);
             this.lbl_trangthai.Name = "lbl_trangthai";
-            this.lbl_trangthai.Size = new System.Drawing.Size(84, 19);
+            this.lbl_trangthai.Size = new System.Drawing.Size(80, 19);
             this.lbl_trangthai.TabIndex = 4;
-            this.lbl_trangthai.Text = "Trạng Thái:";
+            this.lbl_trangthai.Text = "Trạng thái:";
             // 
             // lbl_dongiaton
             // 
             this.lbl_dongiaton.AutoSize = true;
             this.lbl_dongiaton.Location = new System.Drawing.Point(6, 165);
             this.lbl_dongiaton.Name = "lbl_dongiaton";
-            this.lbl_dongiaton.Size = new System.Drawing.Size(105, 19);
+            this.lbl_dongiaton.Size = new System.Drawing.Size(97, 19);
             this.lbl_dongiaton.TabIndex = 8;
-            this.lbl_dongiaton.Text = "Đơn Giá Tính:";
+            this.lbl_dongiaton.Text = "Đơn giá tính:";
             // 
             // lbl_donvitinh
             // 
             this.lbl_donvitinh.AutoSize = true;
             this.lbl_donvitinh.Location = new System.Drawing.Point(6, 131);
             this.lbl_donvitinh.Name = "lbl_donvitinh";
-            this.lbl_donvitinh.Size = new System.Drawing.Size(97, 19);
+            this.lbl_donvitinh.Size = new System.Drawing.Size(89, 19);
             this.lbl_donvitinh.TabIndex = 6;
-            this.lbl_donvitinh.Text = "Đơn Vị Tính:";
+            this.lbl_donvitinh.Text = "Đơn vị tính:";
             // 
             // lbl_tenmonan
             // 
             this.lbl_tenmonan.AutoSize = true;
             this.lbl_tenmonan.Location = new System.Drawing.Point(6, 94);
             this.lbl_tenmonan.Name = "lbl_tenmonan";
-            this.lbl_tenmonan.Size = new System.Drawing.Size(98, 19);
+            this.lbl_tenmonan.Size = new System.Drawing.Size(92, 19);
             this.lbl_tenmonan.TabIndex = 5;
-            this.lbl_tenmonan.Text = "Tên Món Ăn:";
+            this.lbl_tenmonan.Text = "Tên món ăn:";
             // 
             // lbl_tennhommonan
             // 
             this.lbl_tennhommonan.AutoSize = true;
             this.lbl_tennhommonan.Location = new System.Drawing.Point(6, 59);
             this.lbl_tennhommonan.Name = "lbl_tennhommonan";
-            this.lbl_tennhommonan.Size = new System.Drawing.Size(144, 19);
+            this.lbl_tennhommonan.Size = new System.Drawing.Size(134, 19);
             this.lbl_tennhommonan.TabIndex = 4;
-            this.lbl_tennhommonan.Text = "Tên Nhóm Món Ăn:";
+            this.lbl_tennhommonan.Text = "Tên nhóm món ăn:";
             // 
             // lblMaMonAn
             // 
             this.lblMaMonAn.AutoSize = true;
             this.lblMaMonAn.Location = new System.Drawing.Point(6, 23);
             this.lblMaMonAn.Name = "lblMaMonAn";
-            this.lblMaMonAn.Size = new System.Drawing.Size(95, 19);
+            this.lblMaMonAn.Size = new System.Drawing.Size(89, 19);
             this.lblMaMonAn.TabIndex = 3;
-            this.lblMaMonAn.Text = "Mã Món Ăn:";
+            this.lblMaMonAn.Text = "Mã món ăn:";
             // 
             // grbDanhSachMonAn
             // 
@@ -192,9 +196,24 @@
             // 
             // gvvDanhSachMonAn
             // 
+            this.gvvDanhSachMonAn.AllowUserToAddRows = false;
+            this.gvvDanhSachMonAn.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.gvvDanhSachMonAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gvvDanhSachMonAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvvDanhSachMonAn.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvvDanhSachMonAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvvDanhSachMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvvDanhSachMonAn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MAMA,
+            this.TENNMA,
             this.MANMA,
             this.TENMA,
             this.DONGIA,
@@ -202,6 +221,8 @@
             this.gvvDanhSachMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvvDanhSachMonAn.Location = new System.Drawing.Point(3, 16);
             this.gvvDanhSachMonAn.Name = "gvvDanhSachMonAn";
+            this.gvvDanhSachMonAn.ReadOnly = true;
+            this.gvvDanhSachMonAn.RowHeadersVisible = false;
             this.gvvDanhSachMonAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvvDanhSachMonAn.Size = new System.Drawing.Size(541, 232);
             this.gvvDanhSachMonAn.TabIndex = 23;
@@ -212,39 +233,54 @@
             this.MAMA.DataPropertyName = "MAMA";
             this.MAMA.HeaderText = "Mã Món Ăn";
             this.MAMA.Name = "MAMA";
+            this.MAMA.ReadOnly = true;
+            // 
+            // TENNMA
+            // 
+            this.TENNMA.DataPropertyName = "TENNMA";
+            this.TENNMA.HeaderText = "Tên Nhóm Món Ăn";
+            this.TENNMA.Name = "TENNMA";
+            this.TENNMA.ReadOnly = true;
             // 
             // MANMA
             // 
             this.MANMA.DataPropertyName = "MANMA";
             this.MANMA.HeaderText = "Mã Nhóm Món Ăn";
             this.MANMA.Name = "MANMA";
+            this.MANMA.ReadOnly = true;
+            this.MANMA.Visible = false;
             // 
             // TENMA
             // 
             this.TENMA.DataPropertyName = "TENMA";
             this.TENMA.HeaderText = "Tên Món Ăn";
             this.TENMA.Name = "TENMA";
+            this.TENMA.ReadOnly = true;
             // 
             // DONGIA
             // 
             this.DONGIA.DataPropertyName = "DONGIA";
             this.DONGIA.HeaderText = "Đơn Giá";
             this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
             // 
             // DONVITINH
             // 
             this.DONVITINH.DataPropertyName = "DONVITINH";
             this.DONVITINH.HeaderText = "Đơn Vị Tính";
             this.DONVITINH.Name = "DONVITINH";
+            this.DONVITINH.ReadOnly = true;
             // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.MenuBar;
             this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(207, 281);
+            this.btnXoa.Image = global::QuanLyNhaHang.Properties.Resources.delete_32;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(228, 281);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 33);
+            this.btnXoa.Size = new System.Drawing.Size(102, 46);
             this.btnXoa.TabIndex = 38;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -256,9 +292,11 @@
             this.btnSua.BackColor = System.Drawing.SystemColors.MenuBar;
             this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(116, 281);
+            this.btnSua.Image = global::QuanLyNhaHang.Properties.Resources.edit_32;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(120, 281);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 33);
+            this.btnSua.Size = new System.Drawing.Size(102, 46);
             this.btnSua.TabIndex = 37;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -270,9 +308,11 @@
             this.btnThem.BackColor = System.Drawing.SystemColors.MenuBar;
             this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(28, 281);
+            this.btnThem.Image = global::QuanLyNhaHang.Properties.Resources.add32_32;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(12, 281);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 33);
+            this.btnThem.Size = new System.Drawing.Size(102, 46);
             this.btnThem.TabIndex = 36;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -289,8 +329,10 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_MonAn";
-            this.Text = "Frm_MonAn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Món ăn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_MonAn_FormClosing);
             this.Load += new System.EventHandler(this.Frm_MonAn_Load);
             this.gb_qlthucdon.ResumeLayout(false);
@@ -318,13 +360,14 @@
         private System.Windows.Forms.Label lblMaMonAn;
         private System.Windows.Forms.GroupBox grbDanhSachMonAn;
         private System.Windows.Forms.DataGridView gvvDanhSachMonAn;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAMA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNMA;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANMA;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENMA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVITINH;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
     }
 }

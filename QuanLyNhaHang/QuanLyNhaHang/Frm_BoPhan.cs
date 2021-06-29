@@ -108,5 +108,11 @@ namespace DTO
             txtMaBoPhan.Text = gvvDanhSachBoPhan.CurrentRow.Cells[0].Value.ToString();
             txtTenBoPhan.Text = gvvDanhSachBoPhan.CurrentRow.Cells[1].Value.ToString();
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            txtMaBoPhan.ResetText();
+            txtTenBoPhan.ResetText();
+        }
     }
 }

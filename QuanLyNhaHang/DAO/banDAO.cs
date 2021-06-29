@@ -30,28 +30,28 @@ namespace DAO
         private banDAO() { }
         public DataTable getBan()//hàm lấy danh sách bàn từ database
         {
-            return Database.Instrance.ExecuteQuery("SELECT * FROM DBO.BAN");//thực hiện câu truy vấn trên sql thông qua code c#
+            return Database.Instance.ExecuteQuery("SELECT * FROM DBO.BAN");//thực hiện câu truy vấn trên sql thông qua code c#
         }
         public bool insertBan(int maBan, string tenBan, string tenKhuVuc, string trangThai)//hàm insert thông tin bàn
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_insertBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
             return n > 0;
         }
         public bool updatetBan(int maBan, string tenBan, string tenKhuVuc, string trangThai)//hàm update bàn
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_updateBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
             return n > 0;
         }
         public bool deleteban(int maBan)//hàm xóa bàn
         {
-            int n = Database.Instrance.ExecuteNonQuery("EXEC USP_deleteBan @maban", new object[] { maBan });
+            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteBan @maban", new object[] { maBan });
             return n > 0;
         }
-        public List<banDTO> getlistban()//hàm lấy danh sách bàn và add vào mảng
+        public List<banDTO> getListBan()//hàm lấy danh sách bàn và add vào mảng
         {
             List<banDTO> listban = new List<banDTO>();
 
-            DataTable table = Database.Instrance.ExecuteQuery("SELECT * FROM DBO.BAN");
+            DataTable table = Database.Instance.ExecuteQuery("USP_getListBan");
             foreach (DataRow row in table.Rows)
             {
                 banDTO ban = new banDTO(row);
@@ -60,5 +60,9 @@ namespace DAO
 
             return listban;
         }
+        public static int TableWidth = 110;
+        public static int TableHeight = 110;
+        
     }
+
 }

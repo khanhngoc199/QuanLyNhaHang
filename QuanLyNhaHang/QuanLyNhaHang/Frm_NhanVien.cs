@@ -36,6 +36,7 @@ namespace QuanLyNhaHang
             //hiển thị thông tin vào các textbox, combobox, khi ta chọn một dòng trong gridview
             txtTenNhanVien.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "TENNV"));
             txtMaNhanVien.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "MANV"));
+            cbBoPhan.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "TENBP"));
             txtDienThoai.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "DIENTHOAI"));
             txtDiaChi.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "DIACHI"));
             cbGioiTinh.DataBindings.Add(new Binding("Text", dgvDanhSachNhanVien.DataSource, "GIOITINH"));
@@ -209,6 +210,7 @@ namespace QuanLyNhaHang
             dtpNgaySinh.Text = dgvDanhSachNhanVien.CurrentRow.Cells[4].Value.ToString();
             txtDiaChi.Text = dgvDanhSachNhanVien.CurrentRow.Cells[5].Value.ToString();
             txtDienThoai.Text = dgvDanhSachNhanVien.CurrentRow.Cells[6].Value.ToString();
+            
         }
 
         private void Frm_NhanVien_FormClosing(object sender, FormClosingEventArgs e)
