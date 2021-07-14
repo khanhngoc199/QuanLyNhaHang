@@ -35,12 +35,14 @@ namespace DAO
         }
         public bool createND(int ma, string user, string pass)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_creatUser @manv , @user , @matkhau ", new object[] { ma, user, pass });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_creatUser @manv , @user , @matkhau ", new object[] { ma, user, pass });
+            int n = Database.Instance.ExecuteNonQuery("USP_creatUser", new SqlParameter("@manv", ma), new SqlParameter("@user", user), new SqlParameter("@matkhau", pass));
             return n > 0;
         }
         public bool updateuser(string user, string pass, string pass1)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateUser @user , @pass , @pass1 ", new object[] { user, pass, pass1 });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateUser @user , @pass , @pass1 ", new object[] { user, pass, pass1 });
+            int n = Database.Instance.ExecuteNonQuery("USP_updateUser", new SqlParameter("@user", user), new SqlParameter("@pass", pass), new SqlParameter("@pass1", pass1));
             return n > 0;
         }
     }

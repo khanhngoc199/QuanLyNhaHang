@@ -215,6 +215,7 @@
             this.label14.Size = new System.Drawing.Size(90, 25);
             this.label14.TabIndex = 26;
             this.label14.Text = "Số lượng ";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // nmSoLuong
             // 
@@ -226,7 +227,7 @@
             0,
             0});
             this.nmSoLuong.Name = "nmSoLuong";
-            this.nmSoLuong.Size = new System.Drawing.Size(85, 30);
+            this.nmSoLuong.Size = new System.Drawing.Size(90, 30);
             this.nmSoLuong.TabIndex = 25;
             this.nmSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nmSoLuong.Value = new decimal(new int[] {

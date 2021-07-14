@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,17 +35,20 @@ namespace DAO
         }
         public bool insertnhomnl(int maNNL, string tenNNL)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertNhomNL", new SqlParameter("@mannl", maNNL), new SqlParameter("@tennnl", tenNNL));
             return n > 0;
         }
         public bool updatennl(int maNNL, string tenNNL)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateNhomNL @mannl , @tennnl", new object[] { maNNL, tenNNL });
+            int n = Database.Instance.ExecuteNonQuery("USP_updateNhomNL", new SqlParameter("@mannl", maNNL), new SqlParameter("@tennnl", tenNNL));
             return n > 0;
         }
         public bool delete(int maNNL)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteNhomNL @mannl ", new object[] { maNNL });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteNhomNL @mannl ", new object[] { maNNL });
+            int n = Database.Instance.ExecuteNonQuery("USP_deleteNhomNL", new SqlParameter("@mannl", maNNL));
             return n > 1;
 
         }

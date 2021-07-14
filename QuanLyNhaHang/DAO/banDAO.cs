@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,17 +35,20 @@ namespace DAO
         }
         public bool insertBan(int maBan, string tenBan, string tenKhuVuc, string trangThai)//hàm insert thông tin bàn
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertBan", new SqlParameter("@maban", maBan), new SqlParameter("@tenban", tenBan), new SqlParameter("@tenkhuvuc", tenKhuVuc), new SqlParameter("@trangthai", trangThai));
             return n > 0;
         }
         public bool updatetBan(int maBan, string tenBan, string tenKhuVuc, string trangThai)//hàm update bàn
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateBan @maban , @tenban , @tenkhuvuc , @trangthai ", new object[] { maBan, tenBan, tenKhuVuc, trangThai });
+            int n = Database.Instance.ExecuteNonQuery("USP_updateBan", new SqlParameter("@maban", maBan), new SqlParameter("@tenban", tenBan), new SqlParameter("@tenkhuvuc", tenKhuVuc), new SqlParameter("@trangthai", trangThai));
             return n > 0;
         }
         public bool deleteban(int maBan)//hàm xóa bàn
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteBan @maban", new object[] { maBan });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteBan @maban", new object[] { maBan });
+            int n = Database.Instance.ExecuteNonQuery("USP_deleteBan", new SqlParameter("@maban", maBan));
             return n > 0;
         }
         public List<banDTO> getListBan()//hàm lấy danh sách bàn và add vào mảng

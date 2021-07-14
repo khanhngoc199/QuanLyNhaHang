@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,22 +29,26 @@ namespace DAO
         private goiMonDAO() { }
         public bool updatesttban(int maBan)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateSTTBan @maban ", new object[] { maBan });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateSTTBan @maban ", new object[] { maBan });
+            int n = Database.Instance.ExecuteNonQuery("USP_updateSTTBan", new SqlParameter("@maban", maBan));
             return n > 0;
         }
         public bool insertHD(int MAHDX, int MABAN, int MANV, DateTime THOIGIANVAO)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertHD @mahd , @maban , @manhanvien , @thoigianvao  ", new object[] { MAHDX, MABAN, MANV, THOIGIANVAO });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertHD @mahd , @maban , @manhanvien , @thoigianvao  ", new object[] { MAHDX, MABAN, MANV, THOIGIANVAO });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertHD", new SqlParameter("@maban", MABAN),new SqlParameter( "@mahd ", MAHDX),new SqlParameter("@manhanvien", MANV),new SqlParameter ("@thoigianvao",THOIGIANVAO));           
             return n > 0;
         }
         public bool insertCTHD(int MACTHDX, int MAHDX, int MAMA, float SOLUONG)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertHDX @macthd , @mahd , @maman , @soluong ", new object[] { MACTHDX, MAHDX, MAMA, SOLUONG });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertHDX @macthd , @mahd , @maman , @soluong ", new object[] { MACTHDX, MAHDX, MAMA, SOLUONG });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertHDX", new SqlParameter("@macthd", MACTHDX), new SqlParameter("@mahd", MAHDX), new SqlParameter("@maman", MAMA), new SqlParameter("@soluong", SOLUONG));
             return n > 0;
         }
         public bool gopban(int mb1, int mb2)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_gopBanAn @idban1 , @idban2 ", new object[] { mb1, mb2 });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_gopBanAn @idban1 , @idban2 ", new object[] { mb1, mb2 });
+            int n = Database.Instance.ExecuteNonQuery("USP_gopBanAn", new SqlParameter("@idban1", mb1), new SqlParameter("@idban2", mb2));
             return n > 0;
         }
     }

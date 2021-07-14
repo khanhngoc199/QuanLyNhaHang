@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,17 +35,20 @@ namespace DAO
         }
         public bool insertnnl(int maNNL, string tenNL, float donGia, string donViTinh, string ten)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertNguyenLieu @manl  , @tennl , @dongia , @donvitinh , @ten ", new object[] { maNNL, tenNL, donGia, donViTinh, ten });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertNguyenLieu @manl  , @tennl , @dongia , @donvitinh , @ten ", new object[] { maNNL, tenNL, donGia, donViTinh, ten });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertNguyenLieu", new SqlParameter("@manl", maNNL), new SqlParameter("@tennl", tenNL), new SqlParameter("@dongia", donGia), new SqlParameter("@donvitinh", donViTinh), new SqlParameter("@ten", ten));
             return n > 0;
         }
         public bool updatennl(int maNNL, string tenNL, float donGia, string donViTinh, string ten)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateNL @manl  , @tennl , @ten , @dongia , @donvitinh  ", new object[] { maNNL, tenNL, ten, donGia, donViTinh });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateNL @manl  , @tennl , @ten , @dongia , @donvitinh  ", new object[] { maNNL, tenNL, ten, donGia, donViTinh });
+            int n = Database.Instance.ExecuteNonQuery("USP_updateNL", new SqlParameter("@manl", maNNL), new SqlParameter("@tennl", tenNL), new SqlParameter("@ten", ten), new SqlParameter("@dongia", donGia), new SqlParameter("@donvitinh ", donViTinh));
             return n > 0;
         }
         public bool deletenl(int ma)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteNL @manl  ", new object[] { ma });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteNL @manl  ", new object[] { ma });
+            int n = Database.Instance.ExecuteNonQuery("USP_deleteNL", new SqlParameter("@manl", ma));
             return n > 0;
         }
         public List<nguyenLieuDTO> getlistnl()

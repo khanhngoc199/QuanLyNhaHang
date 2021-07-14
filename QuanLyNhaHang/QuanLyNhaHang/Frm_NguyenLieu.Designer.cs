@@ -47,15 +47,15 @@
             this.lblQLNguyenLieu = new System.Windows.Forms.Label();
             this.grb_DSNguyenLieu = new System.Windows.Forms.GroupBox();
             this.gvvDanhSachThucDon = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.MANL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.gb_qlnguyenlieu.SuspendLayout();
             this.grb_DSNguyenLieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvvDanhSachThucDon)).BeginInit();
@@ -226,41 +226,6 @@
             this.gvvDanhSachThucDon.TabIndex = 23;
             this.gvvDanhSachThucDon.SelectionChanged += new System.EventHandler(this.gvvDanhSachThucDon_SelectionChanged);
             // 
-            // MANL
-            // 
-            this.MANL.DataPropertyName = "MANL";
-            this.MANL.HeaderText = "Mã Nguyên Liệu";
-            this.MANL.Name = "MANL";
-            this.MANL.ReadOnly = true;
-            // 
-            // MANNL
-            // 
-            this.MANNL.DataPropertyName = "MANNL";
-            this.MANNL.HeaderText = "Mã Nhóm Nguyên Liệu";
-            this.MANNL.Name = "MANNL";
-            this.MANNL.ReadOnly = true;
-            // 
-            // TENNL
-            // 
-            this.TENNL.DataPropertyName = "TENNL";
-            this.TENNL.HeaderText = "Tên Nguyên Liệu";
-            this.TENNL.Name = "TENNL";
-            this.TENNL.ReadOnly = true;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn Giá";
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.ReadOnly = true;
-            // 
-            // DONVITINH
-            // 
-            this.DONVITINH.DataPropertyName = "DONVITINH";
-            this.DONVITINH.HeaderText = "Đơn Vị Tính";
-            this.DONVITINH.Name = "DONVITINH";
-            this.DONVITINH.ReadOnly = true;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -313,6 +278,41 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // MANL
+            // 
+            this.MANL.DataPropertyName = "MANL";
+            this.MANL.HeaderText = "Mã Nguyên Liệu";
+            this.MANL.Name = "MANL";
+            this.MANL.ReadOnly = true;
+            // 
+            // MANNL
+            // 
+            this.MANNL.DataPropertyName = "MANNL";
+            this.MANNL.HeaderText = "Mã Nhóm Nguyên Liệu";
+            this.MANNL.Name = "MANNL";
+            this.MANNL.ReadOnly = true;
+            // 
+            // TENNL
+            // 
+            this.TENNL.DataPropertyName = "TENNL";
+            this.TENNL.HeaderText = "Tên Nguyên Liệu";
+            this.TENNL.Name = "TENNL";
+            this.TENNL.ReadOnly = true;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn Giá";
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
+            // 
+            // DONVITINH
+            // 
+            this.DONVITINH.DataPropertyName = "DONVITINH";
+            this.DONVITINH.HeaderText = "Đơn Vị Tính";
+            this.DONVITINH.Name = "DONVITINH";
+            this.DONVITINH.ReadOnly = true;
+            // 
             // Frm_NguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,11 +361,11 @@
         private System.Windows.Forms.Label lblQLNguyenLieu;
         private System.Windows.Forms.GroupBox grb_DSNguyenLieu;
         private System.Windows.Forms.DataGridView gvvDanhSachThucDon;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVITINH;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

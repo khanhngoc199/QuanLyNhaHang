@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,11 +42,11 @@ namespace DAO
 
         public void InsertBill(int id)
         {
-            Database.Instance.ExecuteNonQuery("exec USP_insertBILL  @MABAN ", new object[] { id });
+            Database.Instance.ExecuteNonQuery("USP_insertBILL", new SqlParameter("@MABAN", id));
         }
         public void DeleteBill(int id)
         {
-            Database.Instance.ExecuteNonQuery("exec USP_deleteHDX  @MAHDX ", new object[] { id });
+            Database.Instance.ExecuteNonQuery("USP_deleteHDX", new SqlParameter("@MAHDX", id));
         }
 
         public void CheckOut(int id, int giamgia, float tongtien_hoadon, float tongtien_thanhtoan)

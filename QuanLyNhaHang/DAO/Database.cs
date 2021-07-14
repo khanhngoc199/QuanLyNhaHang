@@ -69,7 +69,7 @@ namespace DAO
         }
 
 
-        public int ExecuteNonQuery(string query, object[] parameter = null)
+        public int ExecuteNonQuery(string query,params SqlParameter[] parameter)
         {
             int data = 0;
 
@@ -78,18 +78,12 @@ namespace DAO
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
-
+                command.CommandType = CommandType.StoredProcedure;
                 if (parameter != null)
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    foreach (SqlParameter item in parameter)
                     {
-                        if (item.Contains('@'))
-                        {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
-                        }
+                        command.Parameters.Add(item);
                     }
                 }
 

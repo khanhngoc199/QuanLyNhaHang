@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +51,8 @@ namespace DAO
 
         public void InsertBillInfo(int idBill, int idFood, int count)
         {
-            Database.Instance.ExecuteNonQuery("exec USP_InsertBillInfo @MAHDX , @MAMA , @SOLUONG", new object[] { idBill, idFood, count });
+            //Database.Instance.ExecuteNonQuery("exec USP_InsertBillInfo @MAHDX , @MAMA , @SOLUONG", new object[] { idBill, idFood, count });
+            Database.Instance.ExecuteNonQuery("USP_InsertBillInfo", new SqlParameter("@MAHDX", idBill), new SqlParameter("@MAMA", idFood), new SqlParameter("@SOLUONG", count));
         }
         public void DeleteBillInforByFoofID(int id)
         {

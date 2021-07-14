@@ -126,5 +126,10 @@ namespace QuanLyNhaHang
                 chiTietHoaDonDAO.Instance.InsertBillInfo(idHoaDon, idMonAn, SoLuong);
             }
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

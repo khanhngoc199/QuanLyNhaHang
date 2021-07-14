@@ -35,17 +35,20 @@ namespace DAO
         }
         public bool insertNhanvien(int maNV, string tenNV, string boPhan, string dienThoai, string diaChi, string gioiTinh, DateTime ngaySinh)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertNhanVien @manv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioiTinh, ngaySinh, diaChi, dienThoai });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertNhanVien @manv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioiTinh, ngaySinh, diaChi, dienThoai });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertNhanVien", new SqlParameter("@manv", maNV), new SqlParameter("@tenbp", boPhan), new SqlParameter("@ten", tenNV), new SqlParameter("@gioitinh", gioiTinh), new SqlParameter("@ngaysinh", ngaySinh), new SqlParameter("@diachi", diaChi), new SqlParameter("@dienthoai", dienThoai));
             return n > 0;
         }
         public bool updateNhanvien(int maNV, string tenNV, string boPhan, string dienThoai, string diaChi, string gioiTinh, DateTime ngaySinh)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_update @manv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioiTinh, ngaySinh, diaChi, dienThoai });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_update @manv , @tenbp , @ten , @gioitinh , @ngaysinh , @diachi , @dienthoai ", new object[] { maNV, boPhan, tenNV, gioiTinh, ngaySinh, diaChi, dienThoai });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertNhanVien", new SqlParameter("@manv", maNV), new SqlParameter("@tenbp", boPhan), new SqlParameter("@ten", tenNV), new SqlParameter("@gioitinh", gioiTinh), new SqlParameter("@ngaysinh", ngaySinh), new SqlParameter("@diachi", diaChi), new SqlParameter("@dienthoai", dienThoai));
             return n > 0;
         }
         public bool deleteNhanvien(int maNV)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteNhanVien @manv", new object[] { maNV });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteNhanVien @manv", new object[] { maNV });
+            int n = Database.Instance.ExecuteNonQuery("USP_deleteNhanVien", new SqlParameter("@manv", maNV));
             return n > 0;
         }
         public DataTable getbp()
@@ -65,7 +68,8 @@ namespace DAO
         }
         public bool insertbophan(int ma, string ten)
         {
-            int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertBoPhan @ma , @ten ", new object[] { ma, ten });
+            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertBoPhan @ma , @ten ", new object[] { ma, ten });
+            int n = Database.Instance.ExecuteNonQuery("USP_insertBoPhan", new SqlParameter("@ma", ma), new SqlParameter("@ten", ten));
             return n > 0;
         }
     }

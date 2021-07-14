@@ -68,7 +68,8 @@ namespace QuanLyNhaHang
                                     string donvi = txtDonViTinh.Text;
                                     string trangthai = lsbTrangThai.Text;
                                     float dongia = float.Parse(txtDonGiaTinh.Text);
-                                    if (monAnDAO.Instance.insertmonan(tennhom, mamonan, tenmonan, dongia, donvi, trangthai))//gọi hàm insert món ăn và truyền tham số để insert vào bảng món ăn trong database
+                                    int soluong = int.Parse(txtSoLuong.Text);
+                                    if (monAnDAO.Instance.insertmonan(tennhom, mamonan, tenmonan, dongia, donvi, trangthai,soluong))//gọi hàm insert món ăn và truyền tham số để insert vào bảng món ăn trong database
                                     {
                                         MessageBox.Show("Thành công!");
                                         loadmonan();
@@ -129,7 +130,8 @@ namespace QuanLyNhaHang
                                     string donvi = txtDonViTinh.Text;
                                     float dongia = float.Parse(txtDonGiaTinh.Text);
                                     string trangthai = lsbTrangThai.Text;
-                                    if (monAnDAO.Instance.updatetmonan(tennhom, mamonan, tenmonan, dongia, donvi, trangthai))//gọi hàm update và truyền tham số để sửa thông tin bàn trong database
+                                    int soluong = int.Parse(txtSoLuong.Text);
+                                    if (monAnDAO.Instance.updatetmonan(tennhom, mamonan, tenmonan, dongia, donvi, trangthai, soluong))//gọi hàm update và truyền tham số để sửa thông tin bàn trong database
                                     {
                                         MessageBox.Show("Thành công!");
                                         loadmonan();
@@ -196,10 +198,11 @@ namespace QuanLyNhaHang
         private void gvvDanhSachMonAn_SelectionChanged(object sender, EventArgs e)
         {
             txtMaMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[0].Value.ToString();
-            //cbTenNhomMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[1].Value.ToString();
+            cbTenNhomMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[6].Value.ToString();
             txtTenMonAn.Text = gvvDanhSachMonAn.CurrentRow.Cells[2].Value.ToString();
             txtDonGiaTinh.Text = gvvDanhSachMonAn.CurrentRow.Cells[3].Value.ToString();
             txtDonViTinh.Text = gvvDanhSachMonAn.CurrentRow.Cells[4].Value.ToString();
+            txtSoLuong.Text = gvvDanhSachMonAn.CurrentRow.Cells[7].Value.ToString();
         }
     }
 }

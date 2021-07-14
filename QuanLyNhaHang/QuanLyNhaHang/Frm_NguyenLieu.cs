@@ -190,7 +190,7 @@ namespace QuanLyNhaHang
         private void gvvDanhSachThucDon_SelectionChanged(object sender, EventArgs e)
         {
             txtMaNguyenLieu.Text = gvvDanhSachThucDon.CurrentRow.Cells[0].Value.ToString();
-            cbLoaiNguyenLieu.SelectedValue = gvvDanhSachThucDon.CurrentRow.Cells[1].Value.ToString();
+            cbLoaiNguyenLieu.SelectedValue = gvvDanhSachThucDon.CurrentRow.Cells[1].Value.ToString();           
             txtTenNguyenLieu.Text = gvvDanhSachThucDon.CurrentRow.Cells[2].Value.ToString();
             txtDonGiaTinh.Text = gvvDanhSachThucDon.CurrentRow.Cells[3].Value.ToString();
             txtDonViTinh.Text = gvvDanhSachThucDon.CurrentRow.Cells[4].Value.ToString();
