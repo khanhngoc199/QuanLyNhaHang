@@ -35,19 +35,16 @@ namespace DAO
         }
         public bool insertnhommonan(int manhom, string tennhom)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertMaMA @manma , @tennma ", new object[] { manhom, tennhom });
             int n = Database.Instance.ExecuteNonQuery("USP_insertMaMA", new SqlParameter("@manma", manhom), new SqlParameter("@tennma", tennhom));
             return n > 0;
         }
         public bool updatenhommonan(int manhom, string tennhom)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateMaMA @manma , @tennma ", new object[] { manhom, tennhom });
             int n = Database.Instance.ExecuteNonQuery("USP_updateMaMA", new SqlParameter("@manma", manhom), new SqlParameter("@tennma", tennhom));
             return n > 0;
         }
         public bool deletenhommonan(int manhom)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteMaMA @manma  ", new object[] { manhom });
             int n = Database.Instance.ExecuteNonQuery("USP_deleteMaMA", new SqlParameter("@manma", manhom));
             return n > 0;
         }

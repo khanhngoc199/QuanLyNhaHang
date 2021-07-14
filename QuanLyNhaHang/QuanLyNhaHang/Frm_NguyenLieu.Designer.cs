@@ -52,6 +52,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.MANL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -212,6 +213,7 @@
             this.gvvDanhSachThucDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvvDanhSachThucDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MANL,
+            this.TENNNL,
             this.MANNL,
             this.TENNL,
             this.DONGIA,
@@ -285,12 +287,20 @@
             this.MANL.Name = "MANL";
             this.MANL.ReadOnly = true;
             // 
+            // TENNNL
+            // 
+            this.TENNNL.DataPropertyName = "TENNNL";
+            this.TENNNL.HeaderText = "Tên nhóm nguyên liệu";
+            this.TENNNL.Name = "TENNNL";
+            this.TENNNL.ReadOnly = true;
+            // 
             // MANNL
             // 
             this.MANNL.DataPropertyName = "MANNL";
             this.MANNL.HeaderText = "Mã Nhóm Nguyên Liệu";
             this.MANNL.Name = "MANNL";
             this.MANNL.ReadOnly = true;
+            this.MANNL.Visible = false;
             // 
             // TENNL
             // 
@@ -363,6 +373,7 @@
         private System.Windows.Forms.DataGridView gvvDanhSachThucDon;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;

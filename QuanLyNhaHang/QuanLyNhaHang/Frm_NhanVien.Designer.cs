@@ -168,6 +168,7 @@
             this.cbBoPhan.Name = "cbBoPhan";
             this.cbBoPhan.Size = new System.Drawing.Size(189, 28);
             this.cbBoPhan.TabIndex = 58;
+            
             // 
             // cbGioiTinh
             // 

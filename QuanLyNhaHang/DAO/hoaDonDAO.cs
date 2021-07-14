@@ -74,30 +74,6 @@ namespace DAO
             }
         }
 
-        // THỐNG KE HÓA ĐƠN THEO NGÀY
-        public int GetNumberBillByDate(DateTime thoigianvao, DateTime thoigianra)
-        {
-
-            return (int)Database.Instance.ExecuteSalar("EXEC USP_GETNUMBERBILL @THOIGIANVAO , @THOIGIANRA", new object[] { thoigianvao, thoigianra });
-        }
-
-
-        // TÍNH TỔNG THU THEO HD (CHƯA TÍNH GIẢM GIÁ, ...)
-        public string TotalPrices_HD(DateTime thoigianvao, DateTime thoigianra)
-        {
-            return (string)Database.Instance.ExecuteSalarToDouble("EXEC USP_TotalPrice_HD @THOIGIANVAO , @THOIGIANRA", new object[] { thoigianvao, thoigianra });
-        }
-
-
-        // TÍNH TỔNG THU THEO THỰC TẾ (ĐÃ TÍNH GIẢM GIÁ, ...)
-        public string TotalPrices_TT(DateTime thoigianvao, DateTime thoigianra)
-        {
-            return (string)Database.Instance.ExecuteSalarToDouble("EXEC USP_TotalPrice_TT @THOIGIANVAO , @THOIGIANRA", new object[] { thoigianvao, thoigianra });
-        }
-
-        public DataTable GetListBillByDate_inPage(DateTime thoigianvao, DateTime thoigianra, int pageNumber)
-        {
-            return Database.Instance.ExecuteQuery("EXEC USP_GETLISTBILLBYDATE_IN_PAGE @THOIGIANVAO , @THOIGIANRA , @PAGE", new object[] { thoigianvao, thoigianra, pageNumber });
-        }
+      
     }
 }

@@ -34,13 +34,11 @@ namespace DAO
         }
         public bool insertkv(int maKV, string tenKV, string trangThai)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertKhuVuc @makv , @tenkv , @trangthai ", new object[] { maKV, tenKV, trangThai });
             int n = Database.Instance.ExecuteNonQuery("USP_insertKhuVuc", new SqlParameter("@makv", maKV), new SqlParameter("@tenkv", tenKV), new SqlParameter("@trangthai", trangThai));
             return n > 0;
         }
         public bool updatetkv(int maKV, string tenKV, string trangThai)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateKhuVuc @makv , @tenkv , @trangthai ", new object[] { maKV, tenKV, trangThai });
             int n = Database.Instance.ExecuteNonQuery("USP_updateKhuVuc", new SqlParameter("@makv", maKV), new SqlParameter("@tenkv", tenKV), new SqlParameter("@trangthai", trangThai));
             return n > 0;
         }

@@ -65,7 +65,7 @@ namespace QuanLyNhaHang
                             try
                             {
 
-                                if (nguyenLieuDAO.Instance.insertnnl(int.Parse(txtMaNguyenLieu.Text), txtTenNguyenLieu.Text, float.Parse(txtDonGiaTinh.Text), txtDonViTinh.Text, cbLoaiNguyenLieu.Text))//gọi hàm insert nguyên liêu và truyền tham số để insert và database
+                                if (nguyenLieuDAO.Instance.insertnl(int.Parse(txtMaNguyenLieu.Text), txtTenNguyenLieu.Text, float.Parse(txtDonGiaTinh.Text), txtDonViTinh.Text, cbLoaiNguyenLieu.Text))//gọi hàm insert nguyên liêu và truyền tham số để insert và database
                                 {
                                     MessageBox.Show("Thêm thành công");
                                     getlist();//load lại danh sách nguyên liệu
@@ -117,7 +117,7 @@ namespace QuanLyNhaHang
                         {
                             try
                             {
-                                if (nguyenLieuDAO.Instance.updatennl(int.Parse(txtMaNguyenLieu.Text), cbLoaiNguyenLieu.Text, float.Parse(txtDonGiaTinh.Text), txtDonViTinh.Text, txtTenNguyenLieu.Text))//gọi hàm update nguyên liệu trong lớp nguyenlieu_DAO để sữa thông tin trong database
+                                if (nguyenLieuDAO.Instance.updatenl(int.Parse(txtMaNguyenLieu.Text), cbLoaiNguyenLieu.Text, float.Parse(txtDonGiaTinh.Text), txtDonViTinh.Text, txtTenNguyenLieu.Text))//gọi hàm update nguyên liệu trong lớp nguyenlieu_DAO để sữa thông tin trong database
                                 {
                                     MessageBox.Show("Cập nhật thành công");
                                     getlist();
@@ -190,7 +190,7 @@ namespace QuanLyNhaHang
         private void gvvDanhSachThucDon_SelectionChanged(object sender, EventArgs e)
         {
             txtMaNguyenLieu.Text = gvvDanhSachThucDon.CurrentRow.Cells[0].Value.ToString();
-            cbLoaiNguyenLieu.SelectedValue = gvvDanhSachThucDon.CurrentRow.Cells[1].Value.ToString();           
+            cbLoaiNguyenLieu.SelectedValue = gvvDanhSachThucDon.CurrentRow.Cells[5].Value.ToString();           
             txtTenNguyenLieu.Text = gvvDanhSachThucDon.CurrentRow.Cells[2].Value.ToString();
             txtDonGiaTinh.Text = gvvDanhSachThucDon.CurrentRow.Cells[3].Value.ToString();
             txtDonViTinh.Text = gvvDanhSachThucDon.CurrentRow.Cells[4].Value.ToString();

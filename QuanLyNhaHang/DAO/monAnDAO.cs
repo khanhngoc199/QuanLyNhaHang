@@ -35,19 +35,16 @@ namespace DAO
         }
         public bool insertmonan(string tenNhom, int maMon, string tenMonAn, float donGia, string donViTinh, string trangThai,int soLuong)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_insertMonAn @tennhommonan , @mamonan , @tenmonan , @dongia , @donvitinh , @trangthai ", new object[] { tenNhom, maMon, tenMonAn, donGia, donViTinh, trangThai });
             int n = Database.Instance.ExecuteNonQuery("USP_insertMonAn", new SqlParameter("@tennhommonan", tenNhom), new SqlParameter("@mamonan", maMon), new SqlParameter("@mamonan", maMon), new SqlParameter("@tenmonan", tenMonAn), new SqlParameter("@dongia", donGia), new SqlParameter("@donvitinh", donViTinh), new SqlParameter("@trangthai", trangThai),new SqlParameter("@soluong",soLuong));
             return n > 0;
         }
         public bool updatetmonan(string tenNhom, int maMon, string tenMonAn, float donGia, string donViTinh, string trangThai,int soLuong)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_updateMonAn @tennhommonan , @mamonan , @tenmonan , @dongia , @donvitinh , @trangthai ", new object[] { tenNhom, maMon, tenMonAn, donGia, donViTinh, trangThai });
             int n = Database.Instance.ExecuteNonQuery("USP_updateMonAn", new SqlParameter("@tennhommonan", tenNhom), new SqlParameter("@mamonan", maMon), new SqlParameter("@tenmonan", tenMonAn), new SqlParameter("@dongia", donGia), new SqlParameter("@donvitinh", donViTinh), new SqlParameter("@trangthai", trangThai),new SqlParameter("@soluong",soLuong));
             return n > 0;
         }
         public bool deletemonan(int maMon)
         {
-            //int n = Database.Instance.ExecuteNonQuery("EXEC USP_deleteMonAn @mamon ", new object[] { maMon });
             int n = Database.Instance.ExecuteNonQuery("USP_deleteMonAn", new SqlParameter("@mamon", maMon));
             return n > 0;
         }
@@ -64,7 +61,6 @@ namespace DAO
         }
         public int getmamon(string ten)
         {
-
             return (int)Database.Instance.ExecuteSalar("EXEC USP_getMaMon @ten ", new object[] { ten });
         }
         public monAnDTO getFoodByName(string name)

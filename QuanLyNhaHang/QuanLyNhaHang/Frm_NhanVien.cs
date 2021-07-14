@@ -245,5 +245,7 @@ namespace QuanLyNhaHang
             else
                 this.errorProvider1.Clear();
         }
+
+        
     }
 }
